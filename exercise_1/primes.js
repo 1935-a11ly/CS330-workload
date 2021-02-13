@@ -5,22 +5,20 @@
 var urlParams = new URLSearchParams(window.location.search);
 
 function greet() {
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const nameInfo=urlParams.get('name')||'student';
-let greetElement = document.querySelector("h1");
-greetElement.innerText = `Hello, ${nameInfo}`;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const nameData=urlParams.get('name')||'Student';
+    let greetElement = document.querySelector("h1");
+    greetElement.innerText = `Hello, ${nameData}`;
 }
 
 function isPrime(n) {
-    let number = params.get('n')
-        for (var n = 2; n < number;n++) {
-            if ( number % n === 0 ) {
-                return false;
-            }
+    for (var i=2; i<n; i++) 
+        if ( n % i === 0) {
+            return false;
         }
-        return true;
-    }
+    return n>1;
+}
 
 function printPrimeNumber() {
     const queryString=window.location.search;
@@ -36,29 +34,29 @@ function printPrimeNumber() {
 
 
 function getNPrimes(n) {
-    var list_Primes = [];
+    var list_primes = [];
     var k=2;
     for (var i=0; i<n; i++){
-        while(list_Primes.length<n){
-            if(isPrime(k)) list_Primes.push(k);
+        while(list_primes.length<n){
+            if(isPrime(k)) list_primes.push(k);
             k++;
         }
     }
-    return list_Primes
+    return list_primes
 }
 
 
 function printNPrimes() {
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const n=urlParams.get('n')||330;
-let thead= document.querySelector("thead");
-thead.innerHTML= `First ${n} primes`;
-for (var x of getNPrimes(n)) {
-    var tableData=document.querySelector("tbody");
-    var newRow=tableData.firstChild.insertRow();
-    newRow.innerText=`${x}`;
-}
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const n=urlParams.get('n')||330;
+    let thead= document.querySelector("thead");
+    thead.innerHTML= `First ${n} primes`;
+        for (var x of getNPrimes(n)) {
+            var tableData=document.querySelector("tbody");
+            var newRow=tableData.insertRow();
+            newRow.innerText=`${x}`;
+            }
 
 }
 
