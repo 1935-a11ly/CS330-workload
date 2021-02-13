@@ -1,9 +1,9 @@
 #warnings {
-    background-color: crimson;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #greeting{
-    text-decoration: solid;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #primeInfo{
@@ -12,6 +12,7 @@
 
 h1{
     font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
 }
 
 .head {
