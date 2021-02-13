@@ -7,14 +7,14 @@ var urlParams = new URLSearchParams(window.location.search);
 function greet() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const nameData=urlParams.get('name')||'Student';
-    let greetElement = document.querySelector("h1");
-    greetElement.innerText = `Hello, ${nameData}`;
+    const name_Info=urlParams.get('name')||'Student';
+    let welcome_Greeting = document.querySelector("h1");
+    welcome_Greeting.innerText = `Hello ${name_Info}`;
 }
 
 function isPrime(n) {
-    for (var i=2; i<n; i++) 
-        if ( n % i === 0) {
+    for (var z=2; z<n; z++) 
+        if ( n % z === 0) {
             return false;
         }
     return n>1;
@@ -25,21 +25,21 @@ function printPrimeNumber() {
     const urlParams=new URLSearchParams(queryString);
     const n=urlParams.get('n')||330;
     if(isPrime(n)){
-        document.querySelector("#primeInfo").innerText= `${n} is a prime number`;
+        document.querySelector("#primeInfo").innerText=`${n} is a prime number`;
     }
     else{
-        document.querySelector("#primeInfo").innerText= `${n} is not a prime number`;
+        document.querySelector("#primeInfo").innerText=`${n} is not a prime number`;
     }
     }
 
 
 function getNPrimes(n) {
     var list_primes = [];
-    var k=2;
-    for (var i=0; i<n; i++){
+    var y=2;
+    for (var z=0; z<n; z++){
         while(list_primes.length<n){
-            if(isPrime(k)) list_primes.push(k);
-            k++;
+            if(isPrime(y)) list_primes.push(y);
+            y++;
         }
     }
     return list_primes
@@ -54,8 +54,8 @@ function printNPrimes() {
     thead.innerHTML= `First ${n} primes`;
         for (var x of getNPrimes(n)) {
             var tableData=document.querySelector("tbody");
-            var newRow=tableData.insertRow();
-            newRow.innerText=`${x}`;
+            var nextRow=tableData.insertRow();
+            nextRow.innerText=`${x}`;
             }
 
 }
