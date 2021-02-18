@@ -6,9 +6,10 @@
 .grid-i{
     margin: 1.5%;
     padding: 1.25%;
-    background-color: white;
+    background-color: black;
     border:1px solid;
-    color:black;
+    color:white;
+    font-size: x-large;
 }
 
 .btn-success{

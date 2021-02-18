@@ -7,19 +7,20 @@ var screen;
 
 
 function enterDigit(val) {
-    document.querySelector("#result").innerText=`${val}`;
+    document.querySelector("#result").append(val) 
 }
 
 
 function clear_screen() {
-
+    document.querySelector("#result").innerText=`${0}`;
 }
 
 function eval_expr() {
+
 }
 
 function enterOp(operation) {
-    document.querySelector("#result").innerText=`${operation}`;
+    document.querySelector("#result").append(operation);
 }
 
 window.onload = function () {
