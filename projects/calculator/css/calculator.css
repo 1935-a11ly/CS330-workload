@@ -11,19 +11,24 @@
     color:black;
 }
 
-.equalsign{
+.btn-success{
     width:100%;
     background-color: forestgreen;
     font-size: x-large;
     color: white;
 }
+
+.btn-warning{
+    width:24.6%;
+    font-size: x-large;
+}
 .container{
-    border: 2px solid;
+    
     border-radius: 5px;
     margin:2.5%;
-    background-color:floralwhite;
+    
 }
-.keypad{
+.btn-secondary{
     width:24.6%;
     font-size: x-large;
 }
