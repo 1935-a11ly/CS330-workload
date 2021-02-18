@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="script.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class=container>
+         
+        
+        <div class="grid-i">
+        <span id=result class="screen">&nbsp;</span>
+        </div>
+        
+
+        <div class="grid-item">
+        <button id=btn0 onclick="enterDigit(0)" class="keypad">0</button>
+        <button id=btn1 onclick="enterDigit(1)" class="keypad">1</button>
+        <button id=btn2 onclick="enterDigit(2)" class="keypad">2</button>
+        <button id=btn3 onclick="enterDigit(3)" class="keypad">3</button>
+        </div>
+
+        <div class="grid-item">
+    
+        <button id=btn4 onclick="enterDigit(4)" class ="keypad">4</button>
+        <button id=btn5 onclick="enterDigit(5)" class ="keypad">5</button>
+        <button id=btn6 onclick="enterDigit(6)" class ="keypad">6</button>
+        <button id=btn7 onclick="enterDigit(7)" class ="keypad">7</button>
+    
+        </div>
+
+        <div class="grid-item">
+        <button id=btn8 onclick="enterDigit(8)"class ="keypad">8</button>
+        <button id=btn9 onclick="enterDigit(9)"class ="keypad">9</button>
+        <button id=btnSum onclick="enterOp('+')"class ="keypad">+</button>
+        <button id=btnSub onclick="enterOp('-')"class ="keypad">-</button>
+        </div>
+        
+        <div class="grid-item">
+        <button id=btnMul onclick="enterOp('*')"class ="keypad">*</button>
+        <button id=btnDiv onclick="enterOp('/')"class ="keypad">/</button>
+        <button id=btnDot onclick="enterDigit('.')"class ="keypad">.</button>
+        <button id=btnClr onclick="clear_screen()"class ="keypad">C</button>
+        </div>
+
+        <div class="grid-item">
+        <button id=btnEql onclick="eval_expr()" class= "equalsign">=</button>
+        </div>
+
+        
+    </div>
+
+</body>
+
+</html>
