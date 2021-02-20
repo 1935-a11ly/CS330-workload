@@ -16,15 +16,22 @@ function enterDigit(val) {
 
 
 function clear_screen() {
-    document.querySelector("#result").innerText=`${0}`;
+    document.querySelector("#result").innerHTML=`${0}`;
 }
 
 function eval_expr() {
-    let x = screen.innerHTML
-    let z = String(x)
-    let y = eval(z)
-    document.querySelector("#result").innerHTML=`${y}`
 
+    let countOperators = (screen.innerHTML.match(/\+/g) || []).length;
+    if(countOperators>1){
+        screen.innerHTML= "ERROR";
+    }
+
+    else{
+        let x = screen.innerHTML
+        let z = String(x)
+        let y = eval(z)
+        document.querySelector("#result").innerHTML=`${y}`
+}
 }
 
 function enterOp(operation) {
