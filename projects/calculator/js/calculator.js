@@ -7,7 +7,11 @@ var screen;
 
 
 function enterDigit(val) {
-    document.querySelector("#result").append(val) 
+    if (screen.innerHTML == "0" && val!= "."){
+        document.querySelector("#result").innerHTML=`${val}`;
+    }
+    else{document.querySelector("#result").innerText=document.querySelector("#result").innerText+`${val}`;
+}
 }
 
 
@@ -16,6 +20,10 @@ function clear_screen() {
 }
 
 function eval_expr() {
+    let x = screen.innerHTML
+    let z = String(x)
+    let y = eval(z)
+    document.querySelector("#result").innerHTML=`${y}`
 
 }
 
