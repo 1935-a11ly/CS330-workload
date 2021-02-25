@@ -6,12 +6,22 @@ var team = ["Aardvark", "Beaver", "Cheetah", "Dolphin", "Elephant", "Flamingo", 
 var priority = ["Low", "Normal", "Important", "Critical"];
 
 function addTask() {
-    let vals = [];
-    let rowcolids = ["title", "assignedTo", "priority", "dueDate"];
+    if (!document.querySelector("#newTask").checkValidity()) {
+        let inputWarning = document.createElement("p");
+        inputWarning.setAttribute("class", "alert alert-warning");
+        inputWarning.innerText = "All options must be filled";
+        document.querySelector("body").appendChild(inputWarning);
+        return;
+    }
+    else{
 
-    //Implement
+        let vals = [];
+        let rowcolids = ["title", "assignedTo", "priority", "dueDate"];
+    
+        addRow(vals, document.getElementById("taskList"));
+        
+    }
 
-    addRow(vals, document.getElementById("taskList"));
 }
 
 function addRow(valueList, parent) {
@@ -19,7 +29,7 @@ function addRow(valueList, parent) {
     let td = document.createElement("td");
     let cb = document.createElement("input");
 
-    // Implement
+
 
     parent.appendChild(row);
 }
@@ -28,11 +38,23 @@ function removeRow() {
     // https://stackoverflow.com/questions/26512386/remove-current-row-tr-when-checkbox-is-checked
 }
 
-function populateSelect(selectId, sList) {
-    let sel = document.getElementById(selectId, sList);
+
+function populateSelect(selectElement, options) {
+    for (let opt of options) {
+        let anOption = document.createElement("option");
+        anOption.setAttribute("value", opt);
+        anOption.innerHTML = opt;
+        selectElement.appendChild(anOption);
+        }
+    
+    }
+
+//}
+//function populateSelect(selectId, sList) {
+    //let sel = document.getElementById(selectId, sList);
 
     // Implement
-}
+//}
 
 window.onload = function() {
     populateSelect("assignedTo", team);
