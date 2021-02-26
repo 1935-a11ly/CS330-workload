@@ -19,7 +19,7 @@ function addTask() {
         let rowcolids = ["title", "assignedTo", "priority", "dueDate"];
     
         addRow(vals, document.getElementById("taskList"));
-        
+
     }
 
 }
@@ -39,12 +39,13 @@ function removeRow() {
 }
 
 
-function populateSelect(selectElement, options) {
-    for (let opt of options) {
-        let anOption = document.createElement("option");
-        anOption.setAttribute("value", opt);
-        anOption.innerHTML = opt;
-        selectElement.appendChild(anOption);
+function populateSelect(selectId, sList) {
+    let selections = document.getElementById(selectId)
+    for (let dropDown of sList) {
+        let eachOption = document.createElement("option");
+        eachOption.setAttribute("value", dropDown);
+        eachOption.innerHTML = dropDown;
+        selections.appendChild(eachOption);
         }
     
     }
