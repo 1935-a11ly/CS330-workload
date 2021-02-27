@@ -4,7 +4,7 @@
 
 var team = ["Aardvark", "Beaver", "Cheetah", "Dolphin", "Elephant", "Flamingo", "Giraffe", "Hippo"];
 var priority = ["Low", "Normal", "Important", "Critical"];
-let td = document.createElement("td");
+
 
 class Task {
     constructor(task, team, priority,dueDate) {
@@ -67,7 +67,7 @@ function addRow(valueList, parent) {
     let cb = document.createElement("input");
     cb.setAttribute("type", "checkbox");
     cb.setAttribute("id", "eliminate");
-    cb.setAttribute("onclick", "removeRow();");
+    cb.setAttribute("onclick", "removeRow(this)");
     
     let checker = document.createElement("td");
     checker.appendChild(cb);
@@ -97,7 +97,7 @@ function addRow(valueList, parent) {
 
 
 function removeRow() {
-    {$("#taskList input[type='checkbox']:checked").closest("tr").remove();}
+    $("#taskList input[type='checkbox']:checked").closest("tr").remove();
 }
 
 function populateSelect(selectId, sList) {
@@ -110,11 +110,6 @@ function populateSelect(selectId, sList) {
         }
     
 }
-
-function myFunction() {
-    var element = document.getElementById("#taskList");
-    element.classList.add("low");
-  }
 
 
 window.onload = function() {
