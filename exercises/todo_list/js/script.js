@@ -33,7 +33,6 @@ class Task {
 }
 
 
-
 function addTask() {
     let vals = [];
     let rowcolids = ["title", "assignedTo", "priority", "dueDate"];
@@ -60,18 +59,17 @@ function addTask() {
 }
 }
 
-
 function addRow(valueList, parent) {
     let td = document.createElement("td");
     let row = document.createElement("tr");
     let cb = document.createElement("input");
     cb.setAttribute("type", "checkbox");
-    cb.setAttribute("id", "eliminate");
-    cb.setAttribute("onclick", "removeRow(this)");
+    cb.setAttribute("id", "remove");
+    cb.setAttribute("onclick", "removeStock()");
     
-    let checker = document.createElement("td");
-    checker.appendChild(cb);
-    row.appendChild(checker);
+    let theBox = document.createElement("td");
+    theBox.appendChild(cb);
+    row.appendChild(theBox);
     for (let elements of valueList){
         
         let td = document.createElement("td");
@@ -95,18 +93,17 @@ function addRow(valueList, parent) {
     parent.appendChild(row);
 }
 
-
 function removeRow() {
     $("#taskList input[type='checkbox']:checked").closest("tr").remove();
 }
 
 function populateSelect(selectId, sList) {
-    let selections = document.getElementById(selectId)
-    for (let dropDown of sList) {
-        let eachOption = document.createElement("option");
-        eachOption.setAttribute("value", dropDown);
-        eachOption.innerHTML = dropDown;
-        selections.appendChild(eachOption);
+    let zx = document.getElementById(selectId)
+    for (let contentDrop of sList) {
+        let contents = document.createElement("option");
+        contents.setAttribute("value", contentDrop);
+        contents.innerHTML = contentDrop;
+        zx.appendChild(contents);
         }
     
 }
@@ -116,5 +113,5 @@ window.onload = function() {
     populateSelect("assignedTo", team);
     populateSelect("priority", priority);
     document.querySelector("#title").value = ""
-    
+    document.querySelector("#dueDate").value = ""
 }

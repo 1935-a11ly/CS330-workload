@@ -1,0 +1,69 @@
+
+
+h1{
+    margin: auto;
+    width: 100%;
+    background-color: tan;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+#btnAdd {
+    width: 50%;
+    border-radius: 20px;
+    margin:auto;
+    display: block;
+}
+#stockOptions{
+    margin:2px;
+    margin:0 25px;
+    
+}
+#costPS{
+    margin:2px;
+    margin:0 25px;
+}
+#moneyI{
+    margin:2px;
+    margin:0 25px;
+}
+#CurrentChartPattern{
+    margin:2px;
+    margin:0 25px;
+    
+}
+.organization{
+    margin-top: 2.5%;
+
+}
+.btnorganization{
+    margin-top: 1.5%;
+}
+.table-striped{
+    margin-top: 1%;
+}
+
+#InvestmentTerm{
+    width:250px;
+    margin:2px;
+    margin:0 15px;
+}
+#btnRemoveAll{
+    width: 125px;
+    height: 125px;
+    border-radius: 49%;
+    margin:auto;
+}
+#btnLoad{
+    width: 50%;
+    border-radius: 20px;
+    margin:auto;
+    display: block;
+}
+
+#remove{
+    margin-left:auto; 
+    margin-right:auto;
+}
+
