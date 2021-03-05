@@ -62,21 +62,21 @@ class Portfolio extends Subject {
         this._port = []; 
     }
 
-    //add(stock) {
-       // if (this._port.length < this._maxSize) {
-         //   this._port.push(stock);
-           // this.publish("New stock has been added", this);
-      //  }
-   // }
+    add(stock) {
+        if (this._port.length < this._maxSize) {
+           this._port.push(stock);
+            this.publish("New stock has been added", this);
+        }
+    }
 
     removeStock() {
         $("#tblAllStocks tbody tr").remove();
     }
 
-    //[Symbol.iterator]() {
-      //  let idx = -1;
-      //  return {
-      //      next: () => ({value: this._port[++idx], done: !(idx in this._port)})
-     //   };
-  //  }
+    [Symbol.iterator]() {
+       let idx = -1;
+        return {
+            next: () => ({value: this._port[++idx], done: !(idx in this._port)})
+        };
+    }
 }
