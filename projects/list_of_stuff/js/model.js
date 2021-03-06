@@ -75,7 +75,7 @@ class Portfolio extends Subject {
              this.publish(" Stock has been removed", this);
     }
     }
-
+    
     [Symbol.iterator]() {
        let idx = -1;
         return {

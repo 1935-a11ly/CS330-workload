@@ -41,8 +41,8 @@ function addStock() {
 
 function removeStock(){
     $("#tblAllStocks input[type='checkbox']:checked").closest("tr").remove()
-    localStorage.removeItem()
 }
+
 
 function removeAllStocks(){
     $("#tblAllStocks tbody tr").remove();
