@@ -7,7 +7,7 @@ const allStockOptions = ["Apple (AAPL)", "Amazon (AMZN)", "Facebook (FB)", "AMC"
 const allPossibleChartPatterns= ["Symmetrical Triangle", "Head and Shoulders", "Double top", "Double bottom", "Rounding bottom", "Cup and Handle", "Wedges", "Pennant or flags", "Ascending Triangle", "Descending Triangle"]
 const allInvestmentTerms= ["Long Term", "Short Term"]
 
-var myPortfolioModel = new Portfolio(200);
+var myPortfolioModel = new Portfolio(500);
 var myPortfolioView = new PortfolioView(myPortfolioModel);
 
 function populateSelect(selectElement, options) {
@@ -28,30 +28,33 @@ function addStock() {
         document.querySelector("body").appendChild(warning);
         return;
     }
-    let cost = document.querySelector("#costPS").value;
     let stockName = document.querySelector("#stockOptions").selectedOptions[0].value;
+    let cost = document.querySelector("#costPS").value;
     let cashInvested = document.querySelector("#moneyI").value;
     let CurrentChartPattern = document.querySelector("#CurrentChartPattern").selectedOptions[0].value;
     let InvestmentDuration = document.querySelector("#InvestmentTerm").selectedOptions[0].value;
  
-    let newStock = new Stock(cost, stockName, cashInvested,CurrentChartPattern,InvestmentDuration );
+    let newStock = new Stock(stockName,cost,cashInvested,CurrentChartPattern,InvestmentDuration );
     myPortfolioModel.add(newStock);
-}
-function removeAllStocks(){
-        $("#tblAllStocks tbody tr").remove();
-        localStorage.removeItem("currentStocks_local");
+
 }
 
 function removeStock(){
-        $("#tblAllStocks input[type='checkbox']:checked").closest("tr").remove()
+    $("#tblAllStocks input[type='checkbox']:checked").closest("tr").remove()
+    localStorage.removeItem()
+}
+
+function removeAllStocks(){
+    $("#tblAllStocks tbody tr").remove();
+    localStorage.removeItem("currentStocks_local");
 }
 
 function saveStock(){
     let stocks = localStorage.getItem("currentStocks_local");
     stocks = stocks ? JSON.parse(stocks) : [];
     $("#tblAllStocks").find('tbody tr').each(function(index,stock){
-        var cps=$(stock).find('td').eq(0).text();
-        var sName=$(stock).find('td').eq(1).text();
+        var sName=$(stock).find('td').eq(0).text();
+        var cps=$(stock).find('td').eq(1).text();
         var moneyI=$(stock).find('td').eq(2).text();
         var chartPattern=$(stock).find('td').eq(3).text();
         var iTerm=$(stock).find('td').eq(4).text();
@@ -86,25 +89,26 @@ function loadStock(){
         }
     }
 }
-//function strike() {
-    //$("input[type='checkbox']").on('change', function() {
-     //   if ($(this).is(":checked")) {
-       //  $(this).parent().css({
-       //     'text-decoration': 'line-through',
-       //     'color': 'red'
-       //   })
-       // } else {
-        //  $(this).parent().css({
-         //   'text-decoration': 'none',
-         //   'color': '#000'
-       //   })
-      //  }
-     // });
-//}
-    
+
+function strike() {
+    $("input[type='checkbox']").on('change', function() {
+        if ($(this).is(":checked")) {
+         $(this).parent().css({
+            'text-decoration': 'line-through',
+            'color': 'red'
+          })
+        } else {
+          $(this).parent().css({
+            'text-decoration': 'none',
+            'color': '#000'
+          })
+        }
+      });
+}
 
 window.onload = function() {
     populateSelect(document.querySelector("#stockOptions"), allStockOptions);
     populateSelect(document.querySelector("#CurrentChartPattern"), allPossibleChartPatterns);
     populateSelect(document.querySelector("#InvestmentTerm"), allInvestmentTerms);
+    loadStock();
 };

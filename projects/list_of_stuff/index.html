@@ -15,8 +15,8 @@
         <div class="organization">
         <select name="stock" id="stockOptions" class="btn btn-secondary dropdown-toggle">
         </select>
-        <input type="number" name="costPerShare" placeholder = "Cost Per Share" id="costPS" min="0" max="100000" step = "0.01" class="input-field" required>
-        <input type="number" name="moneyInvested" placeholder = "Money Invested"id="moneyI" min="0.00" max="100000.00" step = "0.01" class="input-field" required>
+        <input type="number" name="costPerShare" placeholder = "Cost Per Share" id="costPS" min="0" max="100000000" step = "0.01" class="input-field" required>
+        <input type="number" name="moneyInvested" placeholder = "Money Invested"id="moneyI" min="0" max="100000000" step = "0.01" class="input-field" required>
         <select name="chart" id="CurrentChartPattern" class="btn btn-secondary dropdown-toggle">
         </select>
         <select name="chart" id="InvestmentTerm" class="btn btn-secondary dropdown-toggle">
@@ -32,7 +32,7 @@
         <button type="button" id="btnSave" class="btn btn-secondary" onclick="saveStock()">Save Stock</button>
         </div>
          <div class = "btnorg">
-        <button type="button" id="btnRemoveAll" class="btn btn-danger" onclick="removeAllStocks()">Remove All Stocks</button>
+        <button type="button" id="btnRemoveAll" class="btn btn-danger" onclick="removeAllStocks()">Clear All Stocks</button>
         <button type="button" id="removeSelected" class="btn btn-danger" onclick="removeStock()">Remove Selected Stock</button>
         </div>
 

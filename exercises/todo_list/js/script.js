@@ -115,3 +115,7 @@ window.onload = function() {
     document.querySelector("#title").value = ""
     document.querySelector("#dueDate").value = ""
 }
+
+//window.location.reload();
+
+

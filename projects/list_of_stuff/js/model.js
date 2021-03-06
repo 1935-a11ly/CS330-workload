@@ -3,20 +3,20 @@
 /* jshint node: true */
 'use strict';
 class Stock {
-    constructor(cps, sName, moneyI, chartPattern,iTerm) {
-        this._costPerShare  = cps;
+    constructor(sName, cps, moneyI, chartPattern,iTerm) {
         this._stockName = sName;
+        this._costPerShare  = cps;
         this._moneyInvested = moneyI;
         this._CurrentChart = chartPattern;
         this._InvestmentTerm = iTerm;
     }
 
-    get cost() {
-        return this._costPerShare;
-    }
-
     get stockName() {
         return this._stockName;
+    }
+
+    get cost() {
+        return this._costPerShare;
     }
 
     get cashInvested() {
@@ -55,7 +55,7 @@ class Subject {
     }
 }
 
-class Portfolio extends Subject {
+class Portfolio extends Subject {                                      
     constructor(portSize) {
         super();
         this._maxSize = portSize;
@@ -69,8 +69,11 @@ class Portfolio extends Subject {
         }
     }
 
-    removeStock() {
-        $("#tblAllStocks tbody tr").remove();
+    removeStock(stock) {
+        if (this._port.length < this._maxSize) {
+            this._port.pop(stock);
+             this.publish(" Stock has been removed", this);
+    }
     }
 
     [Symbol.iterator]() {
