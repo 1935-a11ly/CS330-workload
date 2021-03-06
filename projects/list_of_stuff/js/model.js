@@ -2,6 +2,7 @@
 /* jshint browser: true */
 /* jshint node: true */
 'use strict';
+
 class Stock {
     constructor(sName, cps, moneyI, chartPattern,iTerm) {
         this._stockName = sName;
@@ -30,9 +31,6 @@ class Stock {
     get InvestmentDuration() {
         return this._InvestmentTerm;
     }
-
-
-
 }
 
 class Subject {
@@ -75,7 +73,7 @@ class Portfolio extends Subject {
              this.publish(" Stock has been removed", this);
     }
     }
-    
+
     [Symbol.iterator]() {
        let idx = -1;
         return {
