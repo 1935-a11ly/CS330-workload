@@ -28,8 +28,6 @@ function addStock() {
         document.querySelector("body").appendChild(warning);
         return;
     }
-    let currentStocks_local = localStorage.getItem("currentStocks_local");
-    currentStocks_local = currentStocks_local ? JSON.parse(currentStocks_local) : [];
     let cost = document.querySelector("#costPS").value;
     let stockName = document.querySelector("#stockOptions").selectedOptions[0].value;
     let cashInvested = document.querySelector("#moneyI").value;
@@ -38,8 +36,6 @@ function addStock() {
  
     let newStock = new Stock(cost, stockName, cashInvested,CurrentChartPattern,InvestmentDuration );
     myPortfolioModel.add(newStock);
-    currentStocks_local.push(newStock);
-    localStorage.setItem("currentStocks_local" , JSON.stringify(currentStocks_local));
 }
 function removeAllStocks(){
         $("#tblAllStocks tbody tr").remove();
@@ -47,14 +43,65 @@ function removeAllStocks(){
 }
 
 function removeStock(){
-    $("#tblAllStocks tr").remove();
+        $("#tblAllStocks input[type='checkbox']:checked").closest("tr").remove()
 }
+
+function saveStock(){
+    let stocks = localStorage.getItem("currentStocks_local");
+    stocks = stocks ? JSON.parse(stocks) : [];
+    $("#tblAllStocks").find('tbody tr').each(function(index,stock){
+        var cps=$(stock).find('td').eq(0).text();
+        var sName=$(stock).find('td').eq(1).text();
+        var moneyI=$(stock).find('td').eq(2).text();
+        var chartPattern=$(stock).find('td').eq(3).text();
+        var iTerm=$(stock).find('td').eq(4).text();
+        stocks.push(new Stock(sName,cps,moneyI,chartPattern,iTerm))
+    });
+    localStorage.setItem("currentStocks_local", JSON.stringify(stocks));
+}
+
 function loadStock(){
+    let restoreStocks = localStorage.getItem("currentStocks_local");
+    if (restoreStocks) {
+        restoreStocks = JSON.parse(restoreStocks);
+        let tableBody = document.querySelector("#tblAllStocks > tbody");
+        tableBody.innerHTML = "";
 
+        for (let stock of restoreStocks){
+            let row = document.createElement("tr");
+            let checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.setAttribute("class", "strike");
+            checkbox.setAttribute("onclick", "strike()");
+            let tdRestore = document.createElement("td");
+            tdRestore.appendChild(checkbox);
+            row.appendChild(tdRestore);
+            for(let stockItems in stock){
+                let tdNew = document.createElement("td");
+                tdNew.innerHTML = stock[stockItems];
+                row.appendChild(tdNew);
+            }
+            tableBody.appendChild(row);
+            document.querySelector("#tblAllStocks").appendChild(tableBody)
+        }
+    }
 }
-function strike(){
-
-}
+//function strike() {
+    //$("input[type='checkbox']").on('change', function() {
+     //   if ($(this).is(":checked")) {
+       //  $(this).parent().css({
+       //     'text-decoration': 'line-through',
+       //     'color': 'red'
+       //   })
+       // } else {
+        //  $(this).parent().css({
+         //   'text-decoration': 'none',
+         //   'color': '#000'
+       //   })
+      //  }
+     // });
+//}
+    
 
 window.onload = function() {
     populateSelect(document.querySelector("#stockOptions"), allStockOptions);

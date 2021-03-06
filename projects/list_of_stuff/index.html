@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Musa Investment Portofolio</title>
+    <title>Michael Musa's Investment Portofolio Generator</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" type = "text/css" href="css/style.css">
 </head>
 <body>
-    <h1>Investment Portofolio</h1>
+    <h1 class = "grey"> Portofolio Generator</h1>
     <form id=newStock class="form-group needs-validation">
         <div class="organization">
         <select name="stock" id="stockOptions" class="btn btn-secondary dropdown-toggle">
@@ -28,13 +28,16 @@
         <div class = "btnorganization">
         <button type="button" id="btnLoad" class="btn btn-secondary" onclick="loadStock()">Load Stock</button>
         </div>
-         <div class = "btnorganization">
+        <div class = "btnorganization">
+        <button type="button" id="btnSave" class="btn btn-secondary" onclick="saveStock()">Save Stock</button>
+        </div>
+         <div class = "btnorg">
         <button type="button" id="btnRemoveAll" class="btn btn-danger" onclick="removeAllStocks()">Remove All Stocks</button>
         <button type="button" id="removeSelected" class="btn btn-danger" onclick="removeStock()">Remove Selected Stock</button>
         </div>
-        
-        
+
     </form>
+    <h1 class ="olive"> Investment Portofolio </h1>
     <table id="tblAllStocks" class="table table-striped">
         <thead class = "thead-dark">
             <th> </th><th>Stock Name</th><th>Cost Per Share ($)</th><th>Money Invested($)</th><th>Chart Pattern </th><th>Investment Term </th>

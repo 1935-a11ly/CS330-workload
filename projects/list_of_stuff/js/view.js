@@ -15,27 +15,30 @@ class PortfolioView {
 
         for (let stock of listOfStocks) {
             let row = document.createElement("tr");
-            let cb = document.createElement("input");
-            cb.setAttribute("type", "checkbox");
-            cb.setAttribute("id", "remove");
-            cb.setAttribute("onclick", "removeStock()");
-            row.appendChild(cb);
+            let checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.setAttribute("class", "strike");
+            checkbox.setAttribute("onclick", "strike()");
+            row.appendChild(checkbox);
             
             let tdName = document.createElement("td");
             tdName.innerText = stock.stockName;
             row.appendChild(tdName);
+
             let tdCost = document.createElement("td");
             tdCost.innerText = stock.cost;
             row.appendChild(tdCost);
+
             let tdMoneyInvested = document.createElement("td");
             tdMoneyInvested.innerText = stock.cashInvested;
             row.appendChild(tdMoneyInvested);
+
             let tdChart = document.createElement("td");
             tdChart.innerText = stock.CurrentChartPattern;
             row.appendChild(tdChart);
+
             let tdTerm = document.createElement("td");
             tdTerm.innerText = stock.InvestmentDuration;
-            
             row.appendChild(tdTerm);
 
             tblBody.appendChild(row);
