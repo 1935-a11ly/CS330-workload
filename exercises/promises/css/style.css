@@ -1,55 +1,21 @@
-.form-inline{
-    margin:10px;
-    padding: 10px;
-}
-h1{
-    margin: auto;
-    width: 100%;
-    background-color: aliceblue;
-    padding: 10px;
-    text-align: center;
-    border-radius: 8px;
-}
 
-
-.form1{
-    margin:2.5px;
-    padding:2.5px;
+.control{
+    display: inline-block;
+    margin: 0 50px;
+    padding :40px;
 }
-.form2{
-    margin:2.5px;
-    padding:2.5px;
+label{
+    display: block;
 }
-.form3{
-    margin:2.5px;
-    padding:2.5px;
+#getInfo{
+    width:140px;
 }
-.form4{
-    margin:2.5px;
-    padding:2.5px;
+.text{
+    font-size: larger;
 }
-
-#title{
-    margin:5px;
+.form-text{
+    font-size: larger;
 }
-#assignedTo{
-    margin:0 50px;
-    width:180px;
-}
-#priority{
-    margin:0 50px;
-    width:180px;
-}
-#dueDate{
-    margin:0 50px;
-}
-#taskList{
-    margin:left;
-    padding:20px;
-    text-align: left;
-}
-#addTaskBtn {
-    margin-left: -15px;
-    width: 102.7%;
-    margin-top: 20px;
+#batch{
+    size:60%;
 }
