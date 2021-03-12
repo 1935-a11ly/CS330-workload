@@ -4,11 +4,15 @@
 'use strict';
 
 async function get_individual(num, all_numbers) {
-
+    let result = resolve_with_wait();
+    console.log(result);
+    console.log("Done");
 }
 
 async function get_batch(num, all_numbers) {
-
+    let result = await resolve_with_wait();
+    console.log(result);
+    console.log("Done");
 }
 
 async function clickedon() {

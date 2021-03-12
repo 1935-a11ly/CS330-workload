@@ -1,0 +1,55 @@
+.form-inline{
+    margin:10px;
+    padding: 10px;
+}
+h1{
+    margin: auto;
+    width: 100%;
+    background-color: aliceblue;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+.form1{
+    margin:2.5px;
+    padding:2.5px;
+}
+.form2{
+    margin:2.5px;
+    padding:2.5px;
+}
+.form3{
+    margin:2.5px;
+    padding:2.5px;
+}
+.form4{
+    margin:2.5px;
+    padding:2.5px;
+}
+
+#title{
+    margin:5px;
+}
+#assignedTo{
+    margin:0 50px;
+    width:180px;
+}
+#priority{
+    margin:0 50px;
+    width:180px;
+}
+#dueDate{
+    margin:0 50px;
+}
+#taskList{
+    margin:left;
+    padding:20px;
+    text-align: left;
+}
+#addTaskBtn {
+    margin-left: -15px;
+    width: 102.7%;
+    margin-top: 20px;
+}
