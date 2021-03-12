@@ -4,7 +4,7 @@
 'use strict';
 
 async function get_individual(num) {
-    return fetch('http://numbersapi.com/' + String(num))
+    return fetch(`http://numbersapi.com/${num}`)
     .then (response => response.json())
     .then (data => console.log(data))
     .catch (error => console.log(error))
