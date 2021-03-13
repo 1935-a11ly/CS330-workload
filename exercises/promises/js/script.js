@@ -49,16 +49,16 @@ async function get_individual(num, all_numbers) {
     
 async function get_batch(num, all_numbers) {
     all_numbers.innerHTML="";
-    let numberS = await fetch(`http://numbersapi.com/${num-1}..${num+1}?json`)
+    let numberLog = await fetch(`http://numbersapi.com/${num-1}..${num+1}?json`)
      .then(response => response.json());
-    for (let num_ in numberS){
+    for (let someData in numberLog){
         let row=document.createElement("div");
         let firstDiv=document.createElement("div");
         let secondDiv=document.createElement("div");
         firstDiv.setAttribute("id", "numberInputByUser")
         secondDiv.setAttribute("id", "factAboutNumber")
-        firstDiv.innerHTML=num_;
-        secondDiv.innerHTML=number[num_];
+        firstDiv.innerHTML=someData;
+        secondDiv.innerHTML=numberLog[someData];
         row.appendChild(firstDiv);
         row.appendChild(secondDiv);
         all_numbers.appendChild(row);
