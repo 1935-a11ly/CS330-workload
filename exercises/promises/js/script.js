@@ -4,16 +4,15 @@
 'use strict';
 
 async function get_individual(num, all_numbers) {
+
     all_numbers.innerHTML="";
-    
     let numberFirst = await fetch(`http://numbersapi.com/${num-1}?json`)
     .then(response => response.json());
     let row1=document.createElement("div");
     let div1=document.createElement("div");
     let div2=document.createElement("div");
-    row1.classList.add("numberAndDataContainer");
-    div1.classList.add("numberInputByUser");
-    div2.classList.add("factAboutNumber");
+    div1.setAttribute("id", "numberInputByUser");
+    div2.setAttribute("id", "factAboutNumber");
     div1.innerHTML=num-1;
     div2.innerHTML=numberFirst.text;
     row1.appendChild(div1);
@@ -25,9 +24,8 @@ async function get_individual(num, all_numbers) {
     let row2=document.createElement("div");
     let div3=document.createElement("div");
     let div4=document.createElement("div");
-    row2.classList.add("numberAndDataContainer");
-    div3.classList.add("numberInputByUser");
-    div4.classList.add("factAboutNumber");
+    div3.setAttribute("id", "numberInputByUser");
+    div4.setAttribute("id", "factAboutNumber");
     div3.innerHTML= num;
     div4.innerHTML=numberSecond.text;
     row2.appendChild(div3);
@@ -39,9 +37,8 @@ async function get_individual(num, all_numbers) {
     let row3=document.createElement("div");
     let div5=document.createElement("div");
     let div6=document.createElement("div");
-    row3.classList.add("numberAndDataContainer");
-    div5.classList.add("numberInputByUser");
-    div6.classList.add("factAboutNumber");
+    div5.setAttribute("id", "numberInputByUser")
+    div6.setAttribute("id", "factAboutNumber")
     div5.innerHTML=num+1;
     div6.innerHTML=numberThird.text;
     row3.appendChild(div5);
@@ -52,17 +49,16 @@ async function get_individual(num, all_numbers) {
     
 async function get_batch(num, all_numbers) {
     all_numbers.innerHTML="";
-    let number = await fetch(`http://numbersapi.com/${num-1}..${num+1}?json`)
+    let numberS = await fetch(`http://numbersapi.com/${num-1}..${num+1}?json`)
      .then(response => response.json());
-    for (let item in number){
+    for (let num_ in numberS){
         let row=document.createElement("div");
         let firstDiv=document.createElement("div");
         let secondDiv=document.createElement("div");
-        row.classList.add("numberAndDataContainer");
-        firstDiv.classList.add("numberInputByUser");
-        secondDiv.classList.add("factAboutNumber");
-        firstDiv.innerHTML=item;
-        secondDiv.innerHTML=number[item];
+        firstDiv.setAttribute("id", "numberInputByUser")
+        secondDiv.setAttribute("id", "factAboutNumber")
+        firstDiv.innerHTML=num_;
+        secondDiv.innerHTML=number[num_];
         row.appendChild(firstDiv);
         row.appendChild(secondDiv);
         all_numbers.appendChild(row);

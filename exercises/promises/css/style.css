@@ -1,8 +1,8 @@
 
 .control{
     display: inline-block;
-    margin: 0 50px;
-    padding :40px;
+    margin: 0 84px;
+    padding :10px;
 }
 label{
     display: block;
@@ -11,11 +11,33 @@ label{
     width:140px;
 }
 .text{
-    font-size: larger;
+    font-size: x-large;
 }
 .form-text{
     font-size: larger;
 }
 #batch{
     size:60%;
+}
+#factAboutNumber {
+    padding: 22px;
+    font-size: larger;
+    margin: auto;
+    font-family: auto;
+    font-size: large;
+    width: 1080px;
+    border: 2px solid;
+    margin-bottom: 20px;
+}
+#numberInputByUser {
+    border: 2px solid;
+    width: 165px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: x-large;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
 }
