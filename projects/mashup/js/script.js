@@ -19,12 +19,12 @@ function populateSelect(choiceId, cList) {
 async function get_Character(characterNum,allcharacterNum) {
     if (characterNum === "") {
         let inputWarning = document.createElement("p");
-        inputWarning.setAttribute("class", "alert alert-warning");
+        inputWarning.setAttribute("class", "alert alert-danger");
         inputWarning.innerText = "Please Choose a Character Number!";
         document.querySelector("body").appendChild(inputWarning);
         setTimeout(function() {
             inputWarning.style.display = "none";
-          }, 3000);
+          }, 5000);
         return;
         
     }
