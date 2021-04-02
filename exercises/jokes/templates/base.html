@@ -34,6 +34,7 @@
                         <option value="de">de</option>
                         <option value="it">it</option>
                         <option value="es">es</option>
+                        <option value="gl">gl</option>
                     </select>
                 </div>
                 <div class = "org">
@@ -53,7 +54,7 @@
         </form>
         <div id="jokes">
             {% for item in alljokes %}
-            <div class = "jks">{{ item }}</div>
+            <div class = "btn btn-success">{{ item }}</div>
             {% endfor %}
         </div>
     </div>

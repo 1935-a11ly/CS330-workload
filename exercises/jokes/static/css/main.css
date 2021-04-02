@@ -13,17 +13,17 @@ h2{
     width: 100%;
     margin-top:25px;
 }
-.jks{
-    width: 650px;
-    height: 100px;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid;
-    padding : 8px;
+
+.btn-success{
+
+    width: 50%;
+    padding : 5px;
+    margin: 0 350px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     font-family: auto;
     font-size: larger;
+
 }
 .cropped{
     width: 100%; 

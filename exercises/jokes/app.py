@@ -12,47 +12,91 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-
+    
     jokeCategory=request.cookies.get("jokeCategory")
+
+    # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get category
+
     numberSelection=request.cookies.get("numberSelection")
+
+    # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get number
+
     languageSelection=request.cookies.get("languageSelection")
-    if languageSelection and numberSelection and jokeCategory:
+
+    # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get language
+
+    if languageSelection  is not None and numberSelection is not None and jokeCategory is not None:
+
+        # Attributes language, category and number cannot be NoneTypes for request to go through
+
         return render_template("base.html", alljokes=send_joke(languageSelection, jokeCategory, numberSelection))
+
     else:
+
         return render_template("base.html")
+
     raise NotImplementedError
 
 @app.route("/", methods=["POST"])
 def index_jokes():
-    Data=make_response(redirect(url_for("index"), code=303))
+
+    Data = make_response(redirect(url_for("index"), code=303))
+
+    # Syntax from HTTP methods lecture on youtube 
+
     Data.set_cookie("jokeCategory", request.form.get("category"))
+
+    # Syntax for setting cookies from HTTP methods lecture on youtube
+
     Data.set_cookie("languageSelection", request.form.get("language"))
+
     Data.set_cookie("numberSelection", request.form.get("number"))
+
     return Data
+
     raise NotImplementedError
 
 
 def send_joke(
     language: str = "en", category: str = "all", number: int = 1
 ) -> List[str]:
+
     if language == "es" and category=="chuck":
+
+        # There are no jokes for Chuck Norris in Spanish so we inform the user and have them try a different language
+
         return(["Zero jokes found on Chuck Norris in Spanish. Please try a different language."])
     
     elif number == 1:
+
         jokes = pyjokes.get_joke(language=language, category=category)
+
         fetchedJoke = []
+
         fetchedJoke.append(jokes[1])
+
         return fetchedJoke
     
     elif number == 5:
+
         jokes = pyjokes.get_joke(language=language, category=category)
+
         fetchedJoke = []
+
         fetchedJoke.append(jokes[5])
+
         return fetchedJoke
+
     else:
+
         jokes=pyjokes.get_jokes(language=language, category=category)
+
         fetchedJokes = []
-        for numberOptions in range(int(number)):
-            fetchedJokes.append(jokes[numberOptions])
+
+        for allNumberOptions in range(int(number)):
+
+            fetchedJokes.append(jokes[allNumberOptions])
+
     return fetchedJokes
+
     raise NotImplementedError
