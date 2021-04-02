@@ -65,7 +65,11 @@ def send_joke(
 
         # There are no jokes for Chuck Norris in Spanish and Galician so we inform the user and have them try a different language
 
-        return(["Zero jokes found on Chuck Norris in this language. Please try a different language."])
+        errorMessage = ["Zero jokes found on Chuck Norris in this language. Please try a different language."]
+
+        # Return error message
+
+        return(errorMessage)
     
     elif number == 1:
 
