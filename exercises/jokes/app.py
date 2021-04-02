@@ -69,33 +69,33 @@ def send_joke(
     
     elif number == 1:
 
-        jokes = pyjokes.get_joke(language=language, category=category)
+        allJokesFound = pyjokes.get_joke(language=language, category=category)
 
         fetchedJoke = []
 
-        fetchedJoke.append(jokes[1])
+        fetchedJoke.append(allJokesFound[1])
 
         return fetchedJoke
     
     elif number == 5:
 
-        jokes = pyjokes.get_joke(language=language, category=category)
+        allJokesFound = pyjokes.get_joke(language=language, category=category)
 
         fetchedJoke = []
 
-        fetchedJoke.append(jokes[5])
+        fetchedJoke.append(allJokesFound[5])
 
         return fetchedJoke
 
     else:
 
-        jokes=pyjokes.get_jokes(language=language, category=category)
+        allJokesFound=pyjokes.get_jokes(language=language, category=category)
 
         fetchedJokes = []
 
         for allNumberOptions in range(int(number)):
 
-            fetchedJokes.append(jokes[allNumberOptions])
+            fetchedJokes.append(allJokesFound[allNumberOptions])
 
     return fetchedJokes
 
