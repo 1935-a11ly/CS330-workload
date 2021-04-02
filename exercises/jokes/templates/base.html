@@ -22,7 +22,6 @@
                 <div class = "org">
                     <label for="category" value="Category">Category</label>
                     <select name="category" id="selCat" class = "btn btn-dark">
-                        <!-- TODO: Populate categories -->
                         <option value="all">All</option>
                         <option value="neutral">Neutral</option>
                         <option value="chuck">Chuck</option>
@@ -31,7 +30,6 @@
                 <div class = "org">
                     <label for="language" value="Language">Language</label>
                     <select name="language" id="selLang" class = "btn btn-dark">
-                        <!-- TODO: Populate languages -->
                         <option value="en">en</option>
                         <option value="de">de</option>
                         <option value="it">it</option>
@@ -41,7 +39,6 @@
                 <div class = "org">
                     <label for="number" value="Number">Number</label>
                     <select name="number" id="selNum" class = "btn btn-dark">
-                        <!-- TODO: Populate numbers -->
                         <option value="1">1</option>
                         <option value="5">5</option>
                         <option value="10">10</option>
@@ -55,7 +52,6 @@
             </div>
         </form>
         <div id="jokes">
-            <!-- This is a placeholder for jokes -->
             {% for item in alljokes %}
             <div class = "jks">{{ item }}</div>
             {% endfor %}
