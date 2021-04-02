@@ -14,7 +14,7 @@ h2{
     margin-top:25px;
 }
 .jks{
-    width: 450px;
+    width: 650px;
     height: 100px;
     margin-bottom: 20px;
     display: block;
@@ -22,6 +22,8 @@ h2{
     margin-right: auto;
     border: 2px solid;
     padding : 8px;
+    font-family: auto;
+    font-size: larger;
 }
 .cropped{
     width: 100%; 
