@@ -61,11 +61,11 @@ def send_joke(
     language: str = "en", category: str = "all", number: int = 1
 ) -> List[str]:
 
-    if language == "es" and category=="chuck":
+    if language == "es" or language == "gl" and category=="chuck":
 
-        # There are no jokes for Chuck Norris in Spanish so we inform the user and have them try a different language
+        # There are no jokes for Chuck Norris in Spanish and Galician so we inform the user and have them try a different language
 
-        return(["Zero jokes found on Chuck Norris in Spanish. Please try a different language."])
+        return(["Zero jokes found on Chuck Norris in this language. Please try a different language."])
     
     elif number == 1:
 
