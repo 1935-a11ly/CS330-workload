@@ -46,11 +46,15 @@ def index_jokes():
 
     Data.set_cookie("jokeCategory", request.form.get("category"))
 
-    # Syntax for setting cookies from HTTP methods lecture on youtube
+    # Syntax for setting cookies for category from HTTP methods lecture on youtube
 
     Data.set_cookie("languageSelection", request.form.get("language"))
 
+    # Syntax for setting cookies for language from HTTP methods lecture on youtube
+
     Data.set_cookie("numberSelection", request.form.get("number"))
+
+    # Syntax for setting cookies for number from HTTP methods lecture on youtube
 
     return Data
 
