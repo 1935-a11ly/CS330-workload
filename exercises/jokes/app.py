@@ -12,30 +12,32 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-    
-    jokeCategory=request.cookies.get("jokeCategory")
 
-    # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get category
+    if request.method == "GET":
 
-    numberSelection=request.cookies.get("numberSelection")
+        jokeCategory=request.cookies.get("jokeCategory")
 
-    # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get number
+        # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get category
 
-    languageSelection=request.cookies.get("languageSelection")
+        numberSelection=request.cookies.get("numberSelection")
 
-    # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get language
+        # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get number
 
-    if languageSelection  is not None and numberSelection is not None and jokeCategory is not None:
+        languageSelection=request.cookies.get("languageSelection")
 
-        # Attributes language, category and number cannot be NoneTypes for request to go through
+        # Uses request.cookies.get() as illustrated in HTTP methods lecture on youtube to get language
 
-        return render_template("base.html", alljokes=send_joke(languageSelection, jokeCategory, numberSelection))
+        if languageSelection  is not None and numberSelection is not None and jokeCategory is not None:
 
-    else:
+            # Attributes language, category and number cannot be NoneTypes for request to go through
 
-        return render_template("base.html")
+            return render_template("base.html", alljokes=send_joke(languageSelection, jokeCategory, numberSelection))
 
-    raise NotImplementedError
+        else:
+
+            return render_template("base.html")
+
+        raise NotImplementedError
 
 @app.route("/", methods=["POST"])
 def index_jokes():
@@ -65,7 +67,7 @@ def send_joke(
     language: str = "en", category: str = "all", number: int = 1
 ) -> List[str]:
 
-    if language == "es" or language == "gl" and category=="chuck":
+    if (language == "es" or language == "gl") and category=="chuck":
 
         # There are no jokes for Chuck Norris in Spanish and Galician so we inform the user and have them try a different language
 
