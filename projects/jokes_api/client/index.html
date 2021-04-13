@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Flask for Fun</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/main.css" type = "text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <div><a href="/">Home</a></div>
+        <div class = "imgContainer">
+        <img class="cropped" style = "width:100%; height:50%; object-fit:cover;"src="https://i.pinimg.com/originals/24/c0/6b/24c06b12f265e3998862c16c2d490a6a.jpg" alt="people laughing" width = "100%" height = "100%">
+        </div>
+        <div>
+            <h2 style = "background-color: antiquewhite; color: black;text-align: center;">
+    
+    Pick the category, language, number of jokes to hear or the id of the joke</h2>
+        </div>
+        <br>
+        <form method="POST">
+            <div>
+                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+                    <label for="category" value="Category">Category</label>
+                    <select name="category" id="selCat" class = "btn btn-dark">
+                        <option value="all">All</option>
+                        <option value="neutral">Neutral</option>
+                        <option value="chuck">Chuck</option>
+                    </select>
+                </div>
+                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+                    <label for="language" value="Language">Language</label>
+                    <select name="language" id="selLang" class = "btn btn-dark" class="input-field" required>
+                        <option value="en">English</option>
+                        <option value="de">German</option>
+                        <option value="it">Italian</option>
+                        <option value="es">Spanish</option>
+                        <option value="gl">Galician</option>
+                    </select>
+                </div>
+                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+                    <label for="number" value="Number">Number</label>
+                    <select name="number" id="selNum" class = "btn btn-dark">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+                    <label for="joke_Identifier" value="jokeID">JokeID</label>
+                    <input type="number" name="jokeIdentifier" placeholder = "Joke ID (an int)" id="jokeId" min="1" max="100000000" step = "1">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button type="submit" id="btnAmuse" value="Tell me a joke" class = "btn btn-primary" style = "width:100%; margin-top:25px;">Get Jokes</button>
+                </div>
+            </div>
+        </form>
+        <div>
+            {% for item in alljokes %}
+            <div class = "btn btn-success">{{ item }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
