@@ -51,4 +51,7 @@ def index_jokes(number,language,category, id):
         joke.headers["Access-Control-Allow-Origin"] = "*"
         joke.headers["Content-Type"] = "application/json"
         return joke
+
+if __name__ == "__main__":
+    app.run()
         
