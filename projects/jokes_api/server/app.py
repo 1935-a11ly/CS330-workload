@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route("/api/v1/jokes/<language>/<category>/<int:number>")
 def index(number,language,category):
     jokes={}
-    if  language == "es" and language == "gl" and category == "chuck" :
+    if  (language == "es" or language == "gl") and category == "chuck" :
         return "No kidding"
     else:
         alljokes = pyjokes.get_jokes(language=language, category=category)
@@ -31,7 +31,7 @@ def index(number,language,category):
 
 @app.route("/api/v1/jokes/<language>/<category>/<int:number>/<int:id>")
 def index_jokes(number,language,category, id):
-    if  language == "es" and language == "gl" and category == "chuck" :
+    if  (language == "es" or language == "gl") and category == "chuck" :
         return "No kidding"
     else:
         alljokes = pyjokes.get_jokes(language=language, category=category)
