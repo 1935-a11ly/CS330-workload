@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/api/v1/jokes/<language>/<category>/<int:number>")
 def index(number,language,category):
-
+    jokes={}
     if  language == "es" and language == "gl" and category == "chuck" :
         return "No kidding"
     else:
@@ -22,10 +22,12 @@ def index(number,language,category):
         dictionary={}
         for i in range(len(alljokes)):
             dictionary[i]=alljokes[i]
-        jokes = jsonify(dictionary)
-        jokes.headers["Access-Control-Allow-Origin"] = "*"
-        jokes.headers["Content-Type"] = "application/json"
-        return jokes
+        for k in range(number):
+            jokes[k]=dictionary[k]
+        joke = jsonify(jokes)
+        joke.headers["Access-Control-Allow-Origin"] = "*"
+        joke.headers["Content-Type"] = "application/json"
+        return joke
 
 @app.route("/api/v1/jokes/<language>/<category>/<int:number>/<int:id>")
 def index_jokes(number,language,category, id):

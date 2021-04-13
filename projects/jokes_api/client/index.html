@@ -2,10 +2,7 @@
 
 <head>
     <title>Flask App</title>
-    <script src="client/script.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/main.css" type = "text/css">
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -21,10 +18,10 @@
     Pick the category, language, number of jokes to hear or the id of the joke</h2>
         </div>
         <br>
-        <form method="POST">
+        <form method="GET" action="">
             <div>
                 <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="category" value="Category">Category</label>
+                    <label for="selCat" value="Category">Category</label>
                     <select name="category" id="selCat" class = "btn btn-dark">
                         <option value="all">All</option>
                         <option value="neutral">Neutral</option>
@@ -32,7 +29,7 @@
                     </select>
                 </div>
                 <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="language" value="Language">Language</label>
+                    <label for="selLang" value="Language">Language</label>
                     <select name="language" id="selLang" class = "btn btn-dark" class="input-field" required>
                         <option value="en">English</option>
                         <option value="de">German</option>
@@ -42,7 +39,7 @@
                     </select>
                 </div>
                 <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="number" value="Number">Number</label>
+                    <label for="selNum" value="Number">Number</label>
                     <select name="number" id="selNum" class = "btn btn-dark">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -61,14 +58,14 @@
                     <input type="number" name="jokeIdentifier" placeholder = "Joke ID (an int)" id="jokeId" min="1" max="100000000" step = "1">
                 </div>
             </div>
-            <div>
+            </form>
                 <div>
-                <form action = "GET">
+               
                     <button id="btnAmuse" value="Tell me a joke" class = "btn btn-primary" style = "width:100%; margin-top:25px;" onclick = "get_joke()">Get Jokes</button>
-                </form>
+            
                 </div>
-            </div>
-        </form>
+            
+        
         <div>
             <div id = "response"></div>
         </div>

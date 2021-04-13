@@ -3,20 +3,27 @@
 const BASE_URL =  "http://localhost:5000/api/v1/jokes"
 
 async function get_joke() {
-    language = document.getElementById(selLang);
-    numberOfJokes = document.getElementById(selNum);
-    jokeCategory = document.getElementById(selCat);
-    jokeId = document.getElementById(jokeId);
+    var language = document.getElementById("selLang").value;
+    var numberOfJokes = document.getElementById("selNum").value;
+    var jokeCategory = document.getElementById("selCat").value;
+    var jokeId = document.getElementById("jokeId").value;
+
     if (jokeId) {
-        return fetch(`${BASE_URL}/${language}/${numberOfJokes}/${jokeCategory}/${jokeId}`)
+        var jokes= fetch(`${BASE_URL}/${language}/${jokeCategory}/${numberOfJokes}/${jokeId}`)
         .then(response => response.json());
     }
     else{
-        return fetch(`${BASE_URL}/${language}/${numberOfJokes}/${jokeCategory}`)
+        var jokes= await fetch(`${BASE_URL}/${language}/${jokeCategory}/${numberOfJokes}`)
     .then(response => response.json());  
+    }
+    let row=document.querySelector("#response")
+    for (let index in jokes){
+        let td=document.createElement("div");
+        td.innerHTML=jokes[index];
+        row.appendChild(td);
     }
 }
 async function print_joke(){
-    
+    pass
 }
 
