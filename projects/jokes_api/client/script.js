@@ -9,21 +9,24 @@ async function get_joke() {
     var jokeId = document.getElementById("jokeId").value;
 
     if (jokeId) {
-        var jokes= fetch(`${BASE_URL}/${language}/${jokeCategory}/${numberOfJokes}/${jokeId}`)
+        var fetchedJokes= await fetch(`${BASE_URL}/${language}/${jokeCategory}/${numberOfJokes}/${jokeId}`)
         .then(response => response.json());
-    }
+        let jokeRow=document.querySelector("#response")
+        for (let numberOfJokes in fetchedJokes){
+            let jokeDiv=document.createElement("div");
+            jokeDiv.innerHTML=fetchedJokes[numberOfJokes];
+            jokeRow.appendChild(jokeDiv);
+            }}
     else{
-        var jokes= await fetch(`${BASE_URL}/${language}/${jokeCategory}/${numberOfJokes}`)
-    .then(response => response.json());  
-    }
-    let row=document.querySelector("#response")
-    for (let index in jokes){
-        let td=document.createElement("div");
-        td.innerHTML=jokes[index];
-        row.appendChild(td);
-    }
-}
-async function print_joke(){
-    pass
-}
+        
+        var fetchedJokes= await fetch(`${BASE_URL}/${language}/${jokeCategory}/${numberOfJokes}`)
+        .then(response => response.json());  
+        let jokeRow=document.querySelector("#response")
+        for (let numberOfJokes in fetchedJokes){
+            let jokeDiv=document.createElement("div");
+            jokeDiv.innerHTML=fetchedJokes[numberOfJokes];
+            jokeRow.appendChild(jokeDiv);
+        }
+        }}
+    
 

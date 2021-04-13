@@ -16,7 +16,11 @@ app = Flask(__name__)
 def index(number,language,category):
     jokes={}
     if  (language == "es" or language == "gl") and category == "chuck" :
-        return "No kidding"
+        errorMessage = {"error":"Zero jokes found on Chuck Norris in this language. Please try a different language."}
+        error = jsonify(errorMessage)
+        error.headers["Access-Control-Allow-Origin"] = "*"
+        error.headers["Content-Type"] = "application/json"
+        return error
     else:
         alljokes = pyjokes.get_jokes(language=language, category=category)
         dictionary={}
@@ -32,7 +36,11 @@ def index(number,language,category):
 @app.route("/api/v1/jokes/<language>/<category>/<int:number>/<int:id>")
 def index_jokes(number,language,category, id):
     if  (language == "es" or language == "gl") and category == "chuck" :
-        return "No kidding"
+        errorMessage = {"error":"Zero jokes found on Chuck Norris in this language. Please try a different language."}
+        error = jsonify(errorMessage)
+        error.headers["Access-Control-Allow-Origin"] = "*"
+        error.headers["Content-Type"] = "application/json"
+        return error
     else:
         alljokes = pyjokes.get_jokes(language=language, category=category)
         dictionary={}
@@ -40,5 +48,7 @@ def index_jokes(number,language,category, id):
             dictionary[i]=alljokes[i]   
         jokes={id:dictionary[id]}
         joke = jsonify(jokes)
+        joke.headers["Access-Control-Allow-Origin"] = "*"
+        joke.headers["Content-Type"] = "application/json"
         return joke
         
