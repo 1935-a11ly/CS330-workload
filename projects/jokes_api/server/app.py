@@ -22,12 +22,12 @@ def index(number,language,category):
         error.headers["Content-Type"] = "application/json"
         return error
     else:
-        alljokes = pyjokes.get_jokes(language=language, category=category)
-        dictionary={}
-        for i in range(len(alljokes)):
-            dictionary[i]=alljokes[i]
-        for k in range(number):
-            jokes[k]=dictionary[k]
+        allFetchedJokes = pyjokes.get_jokes(language=language, category=category)
+        emptyDictionary={}
+        for completeJokeList in range(len(allFetchedJokes)):
+            emptyDictionary[completeJokeList]=allFetchedJokes[completeJokeList]
+        for individualJokeList in range(number):
+            jokes[individualJokeList]=emptyDictionary[individualJokeList]
         joke = jsonify(jokes)
         joke.headers["Access-Control-Allow-Origin"] = "*"
         joke.headers["Content-Type"] = "application/json"
@@ -42,11 +42,11 @@ def index_jokes(number,language,category, id):
         error.headers["Content-Type"] = "application/json"
         return error
     else:
-        alljokes = pyjokes.get_jokes(language=language, category=category)
-        dictionary={}
-        for i in range(len(alljokes)):
-            dictionary[i]=alljokes[i]   
-        jokes={id:dictionary[id]}
+        allFetchedJokes = pyjokes.get_jokes(language=language, category=category)
+        emptyDictionary={}
+        for completeJokeList in range(len(allFetchedJokes)):
+            emptyDictionary[completeJokeList]=allFetchedJokes[completeJokeList]   
+        jokes={id:emptyDictionary[id]}
         joke = jsonify(jokes)
         joke.headers["Access-Control-Allow-Origin"] = "*"
         joke.headers["Content-Type"] = "application/json"
