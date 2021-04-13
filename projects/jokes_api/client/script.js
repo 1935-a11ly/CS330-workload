@@ -14,6 +14,8 @@ async function get_joke() {
         let jokeRow=document.querySelector("#response")
         for (let numberOfJokes in fetchedJokes){
             let jokeDiv=document.createElement("div");
+            jokeDiv.setAttribute("class", "mui-btn mui-btn--flat");
+            jokeDiv.setAttribute("style", "width:100%;margin-top:20px;");
             jokeDiv.innerHTML=fetchedJokes[numberOfJokes];
             jokeRow.appendChild(jokeDiv);
             }}
@@ -24,9 +26,15 @@ async function get_joke() {
         let jokeRow=document.querySelector("#response")
         for (let numberOfJokes in fetchedJokes){
             let jokeDiv=document.createElement("div");
+            jokeDiv.setAttribute("class", "mui-btn mui-btn--flat");
+            jokeDiv.setAttribute("style", "width:100%;margin-top:20px;");
             jokeDiv.innerHTML=fetchedJokes[numberOfJokes];
             jokeRow.appendChild(jokeDiv);
         }
         }}
+
+function disableSelect(){
+    $('#selNum').val('1');
+}
     
 

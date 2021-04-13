@@ -1,83 +1,79 @@
 <html>
-
 <head>
     <title>Flask App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-
 <body>
+    <br>
     <div>
-        <br>
-        <div>
-            <h2 style = "color: black;text-align: center; font-size:xx-large;">
-            <span style="color:blue">G</span>
-            <span style="color:red">O</span>
-            <span style="color:yellow">O</span>
-            <span style="color:blue">G</span>
-            <span style="color:green">L</span>
-            <span style="color:red">E</span>
-            <span>&nbsp</span>
-            <span style="color:blue"> J</span>
-            <span style="color:red">O</span>
-            <span style="color:yellow">K</span>
-            <span style="color:blue">E</span>
-            <span style="color:green">S</span>
-            </h2>
+        <h2 style = "color: black;text-align: center; font-size:xx-large;">
+        <span style="color:blue">G</span>
+        <span style="color:red">O</span>
+        <span style="color:yellow">O</span>
+        <span style="color:blue">G</span>
+        <span style="color:green">L</span>
+        <span style="color:red">E</span>
+        <span>&nbsp</span>
+        <span style="color:blue"> J</span>
+        <span style="color:red">O</span>
+        <span style="color:yellow">K</span>
+        <span style="color:blue">E</span>
+        <span style="color:green">S</span>
+        </h2>
+    </div>
+    <br>
+    <form method="GET" action="">
+    <div>
+        <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+            <label for="selCat" value="Category">Category</label>
+            <select name="category" id="selCat" class = "mui-btn mui-btn--danger" class="input-field" required>
+                <option value="all">All</option>
+                <option value="neutral">Neutral</option>
+                <option value="chuck">Chuck</option>
+            </select>
         </div>
-        <br>
-        <form method="GET" action="">
-            <div>
-                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="selCat" value="Category">Category</label>
-                    <select name="category" id="selCat" class = "btn btn-dark" class="input-field" required>
-                        <option value="all">All</option>
-                        <option value="neutral">Neutral</option>
-                        <option value="chuck">Chuck</option>
-                    </select>
-                </div>
-                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="selLang" value="Language">Language</label>
-                    <select name="language" id="selLang" class = "btn btn-dark" class="input-field" required>
-                        <option value="en">English</option>
-                        <option value="de">German</option>
-                        <option value="it">Italian</option>
-                        <option value="es">Spanish</option>
-                        <option value="gl">Galician</option>
-                    </select>
-                </div>
-                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="selNum" value="Number">Number</label>
-                    <select name="number" id="selNum" class = "btn btn-dark">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-                <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
-                    <label for="joke_Identifier" value="jokeID">JokeID</label>
-                    <input type="number" name="jokeIdentifier" placeholder = "Joke ID (an int)" id="jokeId" min="1" max="100000000" step = "1">
-                </div>
-            </div>
-            </form>
-                <div>
-               
-                    <button id="btnAmuse" value="Tell me a joke" class = "btn btn-primary" style = "width:100%; margin-top:25px;" onclick = "get_joke()">Get Jokes</button>
-            
-                </div>
-            
-        
+        <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+            <label for="selLang" value="Language">Language</label>
+            <select name="language" id="selLang" class = "mui-btn mui-btn--danger" class="input-field" required>
+                <option value="en">English</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="es">Spanish</option>
+                <option value="gl">Galician</option>
+            </select>
+        </div>
+        <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+            <label for="selNum" value="Number">Number</label>
+            <select name="number" id="selNum" class = "mui-btn mui-btn--danger">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class = "org" style = "display:inline; margin-left:45px; padding: 45px">
+            <label for="joke_Identifier" value="jokeID">Joke ID</label>
+            <input type="number" class = "mui-btn mui-btn--danger" placeholder = "ID" id="jokeId" min="1" max="1000" step = "1" onclick = "disableSelect()">
+        </div>
+    </div>
+    </form>
+        <div>
+            <button id="btnAmuse" value="Tell me a joke" class = "mui-btn mui-btn--primary" style = "width:100%; margin-top:25px;" onclick = "get_joke()">Get Jokes</button>
+        </div>
         <div>
             <div id = "response"></div>
         </div>
-    </div>
 </body>
-
 </html>
