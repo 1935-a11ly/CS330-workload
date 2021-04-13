@@ -1,7 +1,9 @@
 <html>
 
 <head>
-    <title>Flask for Fun</title>
+    <title>Flask App</title>
+    <script src="client/script.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/main.css" type = "text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -61,14 +63,14 @@
             </div>
             <div>
                 <div>
-                    <button type="submit" id="btnAmuse" value="Tell me a joke" class = "btn btn-primary" style = "width:100%; margin-top:25px;">Get Jokes</button>
+                <form action = "GET">
+                    <button id="btnAmuse" value="Tell me a joke" class = "btn btn-primary" style = "width:100%; margin-top:25px;" onclick = "get_joke()">Get Jokes</button>
+                </form>
                 </div>
             </div>
         </form>
         <div>
-            {% for item in alljokes %}
-            <div class = "btn btn-success">{{ item }}</div>
-            {% endfor %}
+            <div id = "response"></div>
         </div>
     </div>
 </body>
