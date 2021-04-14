@@ -34,7 +34,7 @@ def index(number,language,category):
             joke.headers["Content-Type"] = "application/json"
             return joke
         else:
-            jokes={"error 404":"Error 404, Joke not found"}
+            jokes={"error 404":"Error 404, Joke number out of expected range"}
             joke = jsonify(jokes)
             joke.headers["Access-Control-Allow-Origin"] = "*"
             joke.headers["Content-Type"] = "application/json"
@@ -52,7 +52,7 @@ def index_jokes(number,language,category, id):
     else:
         allFetchedJokes = pyjokes.get_jokes(language=language, category=category)
         if id >= len(allFetchedJokes):
-            errorMessage = {"error 404":"404 not found"}
+            errorMessage = {"error 404":"Error 404, Joke id out of expected range"}
             error = jsonify(errorMessage)
             error.headers["Access-Control-Allow-Origin"] = "*"
             error.headers["Content-Type"] = "application/json"
