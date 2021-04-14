@@ -45,19 +45,8 @@
             <option value="es">Spanish</option>
             <option value="gl">Galician</option>
         </select>
-        <label for="selNum" value="Number">Number</label>
-        <select name="number" id="selNum" class = "mui-btn mui-btn--danger" style = "margin:25px;">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <label for="selNum" value="Number">Joke Number</label>
+        <input type = "number" id="selNum" class = "mui-btn mui-btn--danger" placeholder = "Number" min="1" max="1000" step = "1" style = "margin:25px;">
     
         <label for="joke_Identifier" value="jokeID">Joke ID</label>
         <input type="number" style = "margin:25px;" class = "mui-btn mui-btn--danger" placeholder = "ID" id="jokeId" min="1" max="1000" step = "1" onclick = "disableSelect()">
