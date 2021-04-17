@@ -1,12 +1,14 @@
 <html>
   <head>
+    <link href="//cdn.muicss.com/mui-0.10.1/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.1/js/mui.min.js"></script>
   </head>
   <body>
     <div>
       <div>
-        <div><a href="/country">Country info</a></div>
-        <div><a href="/region">Region info</a></div>
-        <div><a href="/continent">Continent info</a></div>
+        <div class="mui-btn mui-btn--raised"><a href="/country" style = "color:red">Country info</a></div>
+        <div class="mui-btn mui-btn--raised"><a href="/region" style = "color:red">Region info</a></div>
+        <div class="mui-btn mui-btn--raised"><a href="/continent" style = "color:red">Continent info</a></div>
       </div>
     </div>
     {% block content %} {% endblock %}

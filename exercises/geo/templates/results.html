@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="mui-container">
+    <table class="mui-table mui-table--bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Continent</th>
+                <th>Region</th>
+                <th>Area</th>
+                <th>Population</th>
+                <th>Government</th>
+                <th>Head</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for individualData in retrievedData %}
+            <tr>
+                <td>{{ individualData[1] }}</td>
+                <td>{{ individualData[2] }}</td>
+                <td>{{ individualData[3] }}</td>
+                <td>{{ individualData[4] }}</td>
+                <td>{{ individualData[6] }}</td>
+                <td>{{ individualData[11] }}</td>
+                <td>{{ individualData[12] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
