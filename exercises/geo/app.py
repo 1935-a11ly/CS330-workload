@@ -27,8 +27,8 @@ def index():
     if request.method == "GET":
         return render_template("index.html")
         
-    if request.form.get("country_name"):
-        country = request.form.get("country_name")
+    if request.form.get("selCountry"):
+        country = request.form.get("selCountry")
         if country in CACHE:
             result = CACHE[country]
         else:
@@ -42,8 +42,8 @@ def index():
             CACHE[country] = result
         return render_template("results.html", retrievedData = result)
 
-    if request.form.get("region_name"):
-        region = request.form.get("region_name")
+    if request.form.get("selRegion"):
+        region = request.form.get("selRegion")
         if region in CACHE:
             result = CACHE[region]
         else:
@@ -56,8 +56,9 @@ def index():
             )
             CACHE[region] = result
         return render_template("results.html", retrievedData=result)
-    if request.form.get("continent_name"):
-        continent = request.form.get("continent_name")
+        
+    if request.form.get("selContinent"):
+        continent = request.form.get("selContinent")
         if continent in CACHE:
             result = CACHE[continent]
             
