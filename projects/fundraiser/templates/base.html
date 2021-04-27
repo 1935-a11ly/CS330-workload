@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+  </head>
+  <body>
+  <h1> Script Order Form </h1>
+  <h2> Purchaser <h2> <h2> Date </h2>
+  <table class="mui-table mui-table--bordered">
+  <thead>
+    <tr>
+      <th>Merchant</th>
+      <th>Denomination</th>
+      <th>Quantity</th>
+      <th>$ Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>A&W/LIS 10% (Sold as LIS Card)</td>
+        <td>
+            <select>        
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Ace 10%</td>
+        <td>
+            <select>        
+                <option value="5">25</option>
+                <option value="20">50</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Casey's 3%</td>
+        <td>
+            <select>        
+                <option value="5">10</option>
+                <option value="10">25</option>
+                <option value="15">50</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Fareway 3%</td>
+        <td>
+            <select>        
+                <option value="5">20</option>
+                <option value="10">25</option>
+                <option value="15">50</option>
+                <option value="20">100</option>
+                <option value="20">500</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Fisk's 5%</td>
+        <td>
+            <select>        
+                <option value="5">25</option>
+                <option value="10">50</option>
+                <option value="15">100</option>
+                <option value="20">500</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Dollar Fresh 3%</td>
+        <td>
+            <select>        
+                <option value="5">25</option>
+                <option value="10">50</option>
+                <option value="15">100</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+       <td>Kwik Star 5% **</td>
+       <td>
+            <select>        
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">20</option>
+                <option value="20">25</option>
+                <option value="20">50</option>
+                <option value="20">100</option>
+                <option value="20">500</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Pinters 3%</td>
+        <td>
+            <select>        
+                <option value="5">25</option>
+                <option value="10">50</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Subway 5%</td>
+        <td>
+            <select>        
+                <option value="5">5</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Sue-Z-Q's 10%</td>
+        <td>
+            <select>        
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Atomic 5%</td>
+        <td>
+            <select>        
+                <option value="5">10</option>
+                <option value="10">20</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td>Special Orders</td>
+        <td>
+            <select>        
+                <option value="5">500</option>
+                <option value="10">600</option>
+                <option value="15">700</option>
+                <option value="20">800</option>
+            </select>
+        </td>
+        <td> 
+            <input type="int" name="quantity">
+        </td>
+        <td> </td>
+    </tr>
+  </tbody>
+</table>
+    {% block content %} {% endblock %}
+  </body>
+</html>

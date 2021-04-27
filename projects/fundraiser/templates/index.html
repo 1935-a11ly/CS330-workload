@@ -1,0 +1,246 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "../static/js/script.js"></script>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+</head>
+<body>
+
+    <div class = "mui-container mui--text-center" style= "margin-bottom:35px;">
+        <h1> Script Order Form </h1>
+    </div>
+
+    <div>
+        <label for="title" class="form1">Purchaser</label>
+        <input id="title" required />
+        <label for="title" class="form1" style = "margin-left:980px;">Date</label>
+        <input type = "date" id="title" required />
+    </div>
+
+    <div>
+        <table class="mui-table mui-table--bordered" style = "margin-top:47px;width:25%;float:left;">
+            <thead>
+                <tr>
+                   <th>Merchant</th>
+                   <th>Denomination</th>
+                   <th>Quantity</th>
+                   <th>$ Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A&W/LIS 10%(Sold as LIS Card)</td>
+                    <td>
+                        <select id ="sel1" class = "sel" style = "width:80px">        
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty1" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result1" class = "result" select disabled/></td>
+                </tr>              
+                <tr>
+                    <td>Ace 10%</td>
+                    <td>
+                        <select id ="sel2"  class = "sel" style = "width:80px">        
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty2" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result2" class = "result" select disabled/></td>
+                </tr>
+                <tr>
+                    <td>Casey's 3%</td>
+                    <td>
+                        <select id ="sel3" class = "sel" style = "width:80px">        
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty3" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result3" class = "result" select disabled/></td>
+                </tr>
+                <tr>
+                    <td>Fareway 3%</td>
+                    <td>
+                        <select id ="sel4" class = "sel" style = "width:80px">        
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="500">500</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty4" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result4" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Fisk's 5%</td>
+                    <td>
+                        <select id ="sel5" class = "sel" style = "width:80px">        
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="500">500</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int"  id = "qty5" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result5" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Dollar Fresh 3%</td>
+                    <td>
+                        <select id ="sel6" class = "sel" style = "width:80px">        
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty6" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result6" class = "result" select disabled/> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div> 
+        <table class="mui-table mui-table--bordered" style = "margin-top:47px;width:25%;float:right;">
+            <thead>
+                <tr>
+                   <th>Merchant</th>
+                   <th>Denomination</th>
+                   <th>Quantity</th>
+                   <th>$ Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kwik Star 5%     **</td>
+                    <td>
+                        <select id ="sel7" class = "sel" style = "width:80px">        
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="500">500</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int"  id = "qty7" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result7" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Pinters 3%</td>
+                    <td>
+                        <select id ="sel8" class = "sel" style = "width:80px">        
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty8" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result8" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Subway 5%</td>
+                    <td>
+                        <select id ="sel9" class = "sel"style = "width:80px">        
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty9" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result9" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Sue-Z-Q's 10%</td>
+                    <td>
+                        <select id ="sel10" class = "sel" style = "width:80px">        
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty10" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result10" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Atomic 5%</td>
+                    <td>
+                        <select id ="sel11" class = "sel" style = "width:80px">        
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty11" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result11" class = "result" select disabled/> </td>
+                </tr>
+                <tr>
+                    <td>Special Orders</td>
+                    <td>
+                        <select id = "sel12" class = "sel" style = "width:80px">        
+                            <option value="500">500</option>
+                            <option value="600">600</option>
+                            <option value="700">700</option>
+                            <option value="800">800</option>
+                        </select>
+                    </td>
+                    <td> 
+                        <input type="int" id = "qty12" class = "qty" name="quantity">
+                    </td>
+                    <td><input type ="int" id = "result12" class = "result" select disabled/> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<div class= "mui-container mui--text-center">
+    <h2>&nbsp</h2>
+</div>
+<div class= "mui-container mui--text-center" style = "margin-top:25px">
+    <label for="title">Total Cards</label>
+    <input id="totalCards" style = "width:80px"select disabled />
+    <label for="title">Total Due ($)</label>
+    <input id="totalDue" style = "width:80px" select disabled />
+    <label for="title">Purchaser Discretion (1%)</label>
+    <input id="pd1" style = "width:80px" select disabled />
+</div>
+<div class= "mui-container mui--text-center" style = "margin-top:25px">
+    <h2>Purchaser Discretion (Choose Only One)</h2>
+</div>
+<div class= "mui-container mui--text-center" style = "margin-top:20px;margin-bottom:20px">
+    <input type="radio" id = "tc" name = "pd" >   
+    <label for="title" >Tuition Credit for <input id = "tCr" type = "text" style = "width:80px;"/></label>
+    <input type="radio" name = "pd" style = "margin-left:10px">   
+    <label for="title" >Donation to General Fund</label>
+    <input type="radio" name = "pd" style = "margin-left:10px"> 
+    <label for="title" >Adopt a Student Fund</label>
+</div>
+</body>
+</html>
