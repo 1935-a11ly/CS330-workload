@@ -33,7 +33,7 @@ function getTotals() {
         add += Number($(this).val());
     });
     $('#totalDue').val(add); 
-    $('#pd1').val(($('#totalDue').val() * 0.01).toFixed(2));
+    $('#pd1').val(($('#totalDue').val() * 0.01).toFixed(1));
 }
 
 $(document).ready(function(){
