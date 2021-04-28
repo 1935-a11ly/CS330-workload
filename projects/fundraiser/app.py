@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
 print ("Opened database successfully");
 
 #conn.execute('CREATE TABLE CardPurchases (name TEXT, date TEXT, merchant TEXT, denomination INT, quantity INT, amount INT)')
@@ -37,23 +37,10 @@ def totals():
 def manager():
    return render_template('manager.html')
 
-#@app.route('/blank',methods = ['POST', 'GET'])
-#def blank():
-#   if request.method == 'POST':
-#            if int(request.form.get('pdamount')) > 0 : 
-#               pdu = request.form.get('pduse')
-#               amount = request.form.get('pdamount')
-#               with sql.connect("database.db") as con:
-#                  cur = con.cursor()
-#                  cur.execute("INSERT INTO Discretion (discretion,amount) VALUES (?,?)",(pdu,amount))
-#                  con.commit()
-#            msgg = "Added"
-#            return render_template("blank.html",msgg = msgg)
-#            con.close()
 
 @app.route('/disc')
 def disc():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    cur = con.cursor()
    cur.execute("select * from Discretion")
@@ -68,7 +55,7 @@ def data():
                pdu = request.form.get('pduse')
                amount = request.form.get('pdamount')
 
-               with sql.connect("database.db") as con:
+               with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                   cur = con.cursor()
                   cur.execute("INSERT INTO Discretion (discretion,amount) VALUES (?,?)",(pdu,amount))
                   con.commit()
@@ -82,7 +69,7 @@ def data():
                 amoun = request.form.get('amountAW')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(nm,dt,merch,denom,quan,amoun))
                     con.commit()
@@ -96,7 +83,7 @@ def data():
                 a = request.form.get('amounAce')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -110,7 +97,7 @@ def data():
                 a = request.form.get('amounC')
         
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -124,7 +111,7 @@ def data():
                 a = request.form.get('amounfway')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -138,7 +125,7 @@ def data():
                 a = request.form.get('amounfisks')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -152,7 +139,7 @@ def data():
                 a = request.form.get('amoundf')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -166,7 +153,7 @@ def data():
                 a = request.form.get('amounkwik')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -180,7 +167,7 @@ def data():
                 a = request.form.get('amounpint')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(n,d,m,dt,q,a))
                     con.commit()
@@ -194,7 +181,7 @@ def data():
                 amoun = request.form.get('amounsub')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(nm,dt,merch,denom,quan,amoun))
                     con.commit()
@@ -208,7 +195,7 @@ def data():
                 amoun = request.form.get('amounszq')
         
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(nm,dt,merch,denom,quan,amoun))
                     con.commit()
@@ -222,7 +209,7 @@ def data():
                 amoun = request.form.get('amounatom')
                 
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(nm,dt,merch,denom,quan,amoun))
                     con.commit()
@@ -236,7 +223,7 @@ def data():
                 amoun = request.form.get('amounso')
         
 
-                with sql.connect("database.db") as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO CardPurchases (name,date,merchant,denomination,quantity,amount) VALUES (?,?,?,?,?,?)",(nm,dt,merch,denom,quan,amoun))
                     con.commit()
@@ -252,7 +239,7 @@ def data():
 
 @app.route('/list')
 def list():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -263,7 +250,7 @@ def list():
 
 @app.route('/aw')
 def aw():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -274,7 +261,7 @@ def aw():
 
 @app.route('/ace')
 def ace():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -285,7 +272,7 @@ def ace():
 
 @app.route('/caseys')
 def caseys():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -296,7 +283,7 @@ def caseys():
 
 @app.route('/fareway')
 def fareway():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -307,7 +294,7 @@ def fareway():
 
 @app.route('/fisks')
 def fisks():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -318,7 +305,7 @@ def fisks():
 
 @app.route('/dfresh')
 def dfresh():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -329,7 +316,7 @@ def dfresh():
 
 @app.route('/kwikstar')
 def kwikstar():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -340,7 +327,7 @@ def kwikstar():
 
 @app.route('/pinters')
 def pinters():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -351,7 +338,7 @@ def pinters():
 
 @app.route('/subway')
 def subway():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -362,7 +349,7 @@ def subway():
 
 @app.route('/szq')
 def szq():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -373,7 +360,7 @@ def szq():
 
 @app.route('/atomic')
 def atomic():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -384,7 +371,7 @@ def atomic():
 
 @app.route('/special')
 def special():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -395,7 +382,7 @@ def special():
 
 @app.route('/gfund')
 def generalFund():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
@@ -406,7 +393,7 @@ def generalFund():
 
 @app.route('/allfund')
 def allstudentsFund():
-   con = sql.connect("database.db")
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
    con.row_factory = sql.Row
    
    cur = con.cursor()
