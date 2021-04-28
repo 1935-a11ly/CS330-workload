@@ -41,3 +41,18 @@ $(document).ready(function(){
     otherVar = setInterval("calculator()", 10);
 });
 
+function myFunction() {
+    document.getElementById("aW").defaultValue = "";
+    document.getElementById("aC").defaultValue = "";
+    document.getElementById("caseys").defaultValue = "";
+    document.getElementById("fway").defaultValue = " ";
+    document.getElementById("fisks").defaultValue = " ";
+    document.getElementById("dfresh").defaultValue = " ";
+    document.getElementById("kwikstar").defaultValue = " ";
+    document.getElementById("pinters").defaultValue = " ";
+    document.getElementById("subway").defaultValue = " ";
+    document.getElementById("szq").defaultValue = " ";
+    document.getElementById("atomic").defaultValue = " ";
+    document.getElementById("so").defaultValue = " ";
+  }
+
