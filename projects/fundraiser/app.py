@@ -4,14 +4,14 @@
 """Flask application for fundraiser"""
 
 from flask import Flask, render_template, request
-#import sqlite3 as sql
+import sqlite3 as sql
 
 app = Flask(__name__)
 
-#import sqlite3
+import sqlite3
 
-#conn = sqlite3.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
-#print ("Opened database successfully");
+conn = sqlite3.connect('/home/michaelmusa01/CS330-workload/projects/fundraiser/database.db')
+print ("Opened database successfully");
 
 #conn.execute('CREATE TABLE CardPurchases (name TEXT, date TEXT, merchant TEXT, denomination INT, quantity INT, amount INT)')
 #print ("Table created successfully");
