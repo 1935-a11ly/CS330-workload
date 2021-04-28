@@ -9,238 +9,274 @@
     <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
 </head>
 <body>
+<form action = "{{ url_for('data') }}" method = "POST">
+        <div class = "mui-container mui--text-center" style= "margin-bottom:35px;">
+            <h1> Script Order Form </h1>
+        </div>
 
-    <div class = "mui-container mui--text-center" style= "margin-bottom:35px;">
-        <h1> Script Order Form </h1>
-    </div>
+        <div>
+            <label for="title" class="form1">Purchaser</label>
+            <input id="title" name = "nm" required />
+            <label for="title" class="form1" style = "margin-left:980px;">Date</label>
+            <input type = "date" name = "dt" id="title" required />
+        </div>
 
-    <div>
-        <label for="title" class="form1">Purchaser</label>
-        <input id="title" required />
-        <label for="title" class="form1" style = "margin-left:980px;">Date</label>
-        <input type = "date" id="title" required />
-    </div>
+        <div>
+            <table class="mui-table mui-table--bordered" style = "margin-top:47px;width:25%;float:left;">
+                <thead>
+                    <tr>
+                       <th>Merchant</th>
+                       <th>Denomination</th>
+                       <th>Quantity</th>
+                       <th>$ Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="aW" style = "border:0px;width:210px;" value="A&W 10%(Sold as LIS Card)" name="aW" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel1" class = "sel" style = "width:80px" type = "int" name = "valAW">        
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty1" style = "width:150px"class = "qty" name="quantityAW">
+                        </td>
+                        <td><input type ="int" id = "result1" style = "width:150px"class = "result" name="amountAW"readonly/></td>
+                    </tr>              
+                    <tr>
+                        <td>
+                            <input type="text" id="aC" style = "border:0px;width:200px;" value="Ace 10%" name="ace" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel2"  class = "sel" style = "width:80px" name = "de">        
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty2" style = "width:150px"class = "qty" name="qAce">
+                        </td>
+                        <td><input type ="int" id = "result2" style = "width:150px"class = "result" name = "amounAce"readonly/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="caseys" style = "border:0px;width:200px;" value="Caseys 3%" name="caseys" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel3" class = "sel" style = "width:80px" name ="d">        
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty3" style = "width:150px"class = "qty" name="quanC">
+                        </td>
+                        <td><input type ="int" id = "result3" style = "width:150px"class = "result" name = "amounC" readonly/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="fway" style = "border:0px;width:200px;" value="Fareway 3%" name="fway" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel4" class = "sel" style = "width:80px" name = "dN">        
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="500">500</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty4" style = "width:150px"class = "qty" name="quanfway"/>
+                        </td>
+                        <td>
+                            <input type ="int" id = "result4" style = "width:150px"class = "result" name ="amounfway" readonly/> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="fisks" style = "border:0px;width:200px;" value="Fisks 5%" name="fisks" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel5" class = "sel" style = "width:80px" name ="DE">        
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="500">500</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int"  id = "qty5" style = "width:150px"class = "qty" name="quanfisks">
+                        </td>
+                        <td><input type ="int" id = "result5" style = "width:150px"class = "result" name="amounfisks" readonly/> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="dfresh" style = "border:0px;width:200px;" value="Dollar Fresh 3%" name="dfresh" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel6" class = "sel" style = "width:80px" name = "DEN">        
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty6" style = "width:150px"class = "qty" name="quandf">
+                        </td>
+                        <td><input type ="int" id = "result6" style = "width:150px"class = "result" name = "amoundf"readonly/> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div> 
+            <table class="mui-table mui-table--bordered" style = "margin-top:47px;width:25%;float:right;">
+                <thead>
+                    <tr>
+                       <th>Merchant</th>
+                       <th>Denomination</th>
+                       <th>Quantity</th>
+                       <th>$ Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="kwikstar" style = "border:0px;width:200px;" value="Kwik Star 5% **" name="kwikstar" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel7" class = "sel" style = "width:80px" name="DENO">        
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="500">500</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int"  id = "qty7" style = "width:150px"class = "qty" name="quankwik">
+                        </td>
+                        <td><input type ="int" id = "result7" style = "width:150px"class = "result"  name="amounkwik" readonly/> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="pinters" style = "border:0px;width:200px;" value="Pinters 3%" name="pinters" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel8" class = "sel" style = "width:80px" name = "DENOM">        
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty8" style = "width:150px"class = "qty" name="quanpint">
+                        </td>
+                        <td><input type ="int" id = "result8" style = "width:150px"class = "result" name="amounpint"readonly/> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="subway" style = "border:0px;width:200px;" value="Subway 5%" name="subway" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel9" class = "sel"style = "width:80px" name = "DENOMI">        
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty9" style = "width:150px"class = "qty" name="quansub">
+                        </td>
+                        <td><input type ="int" id = "result9" style = "width:150px"class = "result" name="amounsub"readonly/> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="szq" style = "border:0px;width:200px;" value="Sue-Z-Q 10%" name="szq" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel10" class = "sel" style = "width:80px" name = "DENOMIN">        
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty10" style = "width:150px"class = "qty" name="quanszq">
+                        </td>
+                        <td><input type ="int" id = "result10" style = "width:150px"class = "result" name="amounszq" readonly/> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="atomic" style = "border:0px;width:200px;" value="Atomic 5%" name="atomic" readonly>
+                        </td>
+                        <td>
+                            <select id ="sel11" class = "sel" style = "width:80px" name = "DENOMINA">        
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty11" style = "width:150px"class = "qty" name="quanatom">
+                        </td>
+                        <td><input type ="int" id = "result11" style = "width:150px"class = "result" name="amounatom" readonly/> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="so" style = "border:0px;width:200px;" value="Special Orders" name="so" readonly>
+                        </td>
+                        <td>
+                            <select id = "sel12" class = "sel" style = "width:80px" name = "DENOMINAT">        
+                                <option value="500">500</option>
+                                <option value="600">600</option>
+                                <option value="700">700</option>
+                                <option value="800">800</option>
+                            </select>
+                        </td>
+                        <td> 
+                            <input type="int" id = "qty12" style = "width:150px"class = "qty" name="quanso">
+                        </td>
+                        <td><input type ="int" id = "result12" style = "width:150px"class = "result" name="amounso" readonly/> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class= "mui-container mui--text-center">
+            <h2>&nbsp</h2>
+        </div>
+        <div class= "mui-container mui--text-center" style = "margin-top:25px">
+            <label for="total_Cards">Total Cards</label>
+            <input id="totalCards" type = "int" style = "width:80px" name = "tcards" readonly />
+            <label for="total_Due">Total Due ($)</label>
+            <input id="totalDue" type = "int" style = "width:80px" name = "tdue" readonly />
+            <label for="purchaser_Discretion">Purchaser Discretion (1%)</label>
+            <input id="pd1" style = "width:80px" name = "pdamount" readonly />
+        </div>
+        <div class= "mui-container mui--text-center" style = "margin-top:25px">
+            <h2>Purchaser Discretion (You can only choose one)</h2>
+        </div>
+        <div class= "mui-container mui--text-center" style = "margin-top:20px;margin-bottom:20px">
+            <select id ="sel3" class = "sel" style = "width:250px" name ="pduse">         
+                <option for="title" >Tuition Credit</option>
+                <option for="title" >Donation to General Fund</option>
+                <option for="title" >Adopt a Student Fund</option>
+            </select>
+        </div>
+        
+        <div class= "mui-container mui--text-center" style = "margin-top:30px;margin-bottom:20px">
+            <label style = "margin-bottom:20px">If You Seleted Tuition Credit Enter Student</label><br>
+            <input type = "text" style = "margin-top:20px" name ="studentName"/>
+        </div>
 
-    <div>
-        <table class="mui-table mui-table--bordered" style = "margin-top:47px;width:25%;float:left;">
-            <thead>
-                <tr>
-                   <th>Merchant</th>
-                   <th>Denomination</th>
-                   <th>Quantity</th>
-                   <th>$ Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>A&W/LIS 10%(Sold as LIS Card)</td>
-                    <td>
-                        <select id ="sel1" class = "sel" style = "width:80px">        
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty1" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result1" class = "result" select disabled/></td>
-                </tr>              
-                <tr>
-                    <td>Ace 10%</td>
-                    <td>
-                        <select id ="sel2"  class = "sel" style = "width:80px">        
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty2" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result2" class = "result" select disabled/></td>
-                </tr>
-                <tr>
-                    <td>Casey's 3%</td>
-                    <td>
-                        <select id ="sel3" class = "sel" style = "width:80px">        
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty3" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result3" class = "result" select disabled/></td>
-                </tr>
-                <tr>
-                    <td>Fareway 3%</td>
-                    <td>
-                        <select id ="sel4" class = "sel" style = "width:80px">        
-                            <option value="20">20</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="500">500</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty4" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result4" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Fisk's 5%</td>
-                    <td>
-                        <select id ="sel5" class = "sel" style = "width:80px">        
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="500">500</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int"  id = "qty5" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result5" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Dollar Fresh 3%</td>
-                    <td>
-                        <select id ="sel6" class = "sel" style = "width:80px">        
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty6" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result6" class = "result" select disabled/> </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div> 
-        <table class="mui-table mui-table--bordered" style = "margin-top:47px;width:25%;float:right;">
-            <thead>
-                <tr>
-                   <th>Merchant</th>
-                   <th>Denomination</th>
-                   <th>Quantity</th>
-                   <th>$ Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Kwik Star 5%     **</td>
-                    <td>
-                        <select id ="sel7" class = "sel" style = "width:80px">        
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="500">500</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int"  id = "qty7" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result7" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Pinters 3%</td>
-                    <td>
-                        <select id ="sel8" class = "sel" style = "width:80px">        
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty8" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result8" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Subway 5%</td>
-                    <td>
-                        <select id ="sel9" class = "sel"style = "width:80px">        
-                            <option value="5">5</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty9" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result9" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Sue-Z-Q's 10%</td>
-                    <td>
-                        <select id ="sel10" class = "sel" style = "width:80px">        
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty10" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result10" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Atomic 5%</td>
-                    <td>
-                        <select id ="sel11" class = "sel" style = "width:80px">        
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty11" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result11" class = "result" select disabled/> </td>
-                </tr>
-                <tr>
-                    <td>Special Orders</td>
-                    <td>
-                        <select id = "sel12" class = "sel" style = "width:80px">        
-                            <option value="500">500</option>
-                            <option value="600">600</option>
-                            <option value="700">700</option>
-                            <option value="800">800</option>
-                        </select>
-                    </td>
-                    <td> 
-                        <input type="int" id = "qty12" class = "qty" name="quantity">
-                    </td>
-                    <td><input type ="int" id = "result12" class = "result" select disabled/> </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-<div class= "mui-container mui--text-center">
-    <h2>&nbsp</h2>
-</div>
-<div class= "mui-container mui--text-center" style = "margin-top:25px">
-    <label for="title">Total Cards</label>
-    <input id="totalCards" style = "width:80px"select disabled />
-    <label for="title">Total Due ($)</label>
-    <input id="totalDue" style = "width:80px" select disabled />
-    <label for="title">Purchaser Discretion (1%)</label>
-    <input id="pd1" style = "width:80px" select disabled />
-</div>
-<div class= "mui-container mui--text-center" style = "margin-top:25px">
-    <h2>Purchaser Discretion (Choose Only One)</h2>
-</div>
-<div class= "mui-container mui--text-center" style = "margin-top:20px;margin-bottom:20px">
-    <input type="radio" id = "tc" name = "pd" >   
-    <label for="title" >Tuition Credit for <input id = "tCr" type = "text" style = "width:80px;"/></label>
-    <input type="radio" name = "pd" style = "margin-left:10px">   
-    <label for="title" >Donation to General Fund</label>
-    <input type="radio" name = "pd" style = "margin-left:10px"> 
-    <label for="title" >Adopt a Student Fund</label>
-</div>
+        <div class= "mui-container mui--text-center" style = "margin-top:30px;margin-bottom:20px">
+            <input type = "submit" class="mui-btn mui-btn--raised" value = "submit" />
+        </div>
+</form>
 </body>
 </html>

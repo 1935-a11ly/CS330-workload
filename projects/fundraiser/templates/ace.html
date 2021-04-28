@@ -1,0 +1,19 @@
+{% extends "aw.html" %}
+
+{% block content %}
+   
+      <table class = "mui-table mui-table--bordered">
+         <thead>
+            <th>Merchant</th>
+            <th>Total cards sold</th>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row['merchant']}}</td>
+               <td>{{row['sum(quantity)']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+       
+ {% endblock %}

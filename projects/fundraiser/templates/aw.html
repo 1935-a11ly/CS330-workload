@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+</head>
+   <body>
+      <table class = "mui-table mui-table--bordered">
+         <thead>
+            <th>Merchant</th>
+            <th>Total cards sold</th>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row['merchant']}}</td>
+               <td>{{row['sum(quantity)']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>

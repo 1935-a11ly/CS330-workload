@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+</head>
+   <body>
+   
+      <table  class = "mui-table mui-table--bordered">
+         <thead>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Merchant</th>
+            <th>Denomination</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["name"]}}</td>
+               <td>{{row["date"]}}</td>
+               <td>{{row['merchant']}}</td>
+               <td>{{row['denomination']}}</td>
+               <td>{{row['quantity']}}</td>
+               <td>{{row['amount']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+   <a href = "/manager" class = "mui-btn mui-btn--danger">Back to Manager Home</a>
+   <a href = "/" class = "mui-btn mui-btn--primary">Back to Fundraiser Home</a>  
+   </body>
+</html>
