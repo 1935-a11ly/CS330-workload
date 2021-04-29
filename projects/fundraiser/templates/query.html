@@ -5,19 +5,20 @@
     <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
 </head>
    <body>
-      <table class = "mui-table mui-table--bordered">
+   
+      <table  class = "mui-table mui-table--bordered">
          <thead>
-            <th>Merchant</th>
-            <th>Total cards sold</th>
+            <th>Total Number of Cards Sold</th>
          </thead>
          
          {% for row in rows %}
             <tr>
-               <td>{{row['merchant']}}</td>
                <td>{{row['sum(quantity)']}}</td>
             </tr>
          {% endfor %}
       </table>
-      <a href = "/totals" class = "mui-btn mui-btn--danger">Back to Totals Per Merchant</a> 
+   <a href = "/month" class = "mui-btn mui-btn--accent">Back to Total Sales By Date Query</a>
+   <a href = "/manager" class = "mui-btn mui-btn--danger">Back to Manager Home</a>
+   <a href = "/" class = "mui-btn mui-btn--primary">Back to Fundraiser Home</a>  
    </body>
 </html>

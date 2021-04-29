@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "../static/js/script.js"></script>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+</head>
+<body>
+<form action = "{{ url_for('qsearch') }}" method = "POST">
+        <div class= "mui-container mui--text-center" style = "margin-top:20px">
+            <h2 class="mui--text-display2">Search Total Cards Sold Within A Date Range</h2>
+        </div>
+        <div class= "mui-container mui--text-center" style = "margin-top:20px;margin-bottom:20px">     
+            <label for="title">Start Date</label>
+            <input type = "date" id ="d11"name="d1" required />
+            <label for="title"  >End Date</label>
+            <input type = "date" id ="d12"name = "d2" required/>
+        </div>
+
+        <div class= "mui-container mui--text-center" style = "margin-top:30px;margin-bottom:20px">
+            <input type = "submit" class="mui-btn mui-btn--raised" value = "submit" />
+        </div>
+
+        <div class= "mui-container mui--text-center" style = "margin-top:30px;margin-bottom:20px">
+        <a href = "/manager" class = "mui-btn mui-btn--danger">Back to Manager Home</a>
+        <a href = "/" class = "mui-btn mui-btn--primary">Back to Fundraiser Home</a> 
+        </div>
+</form>
+</body>
+</html>
