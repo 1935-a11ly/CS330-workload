@@ -4,6 +4,7 @@
     <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
     <script src="https://kit.fontawesome.com/6f75aa0fc4.js" crossorigin="anonymous"></script>
+    <script src = "../static/get.js"></script>
 </head>
     <body style = "background:linear-gradient( 89.7deg, rgba(223,0,0,0.15) 2.7%, rgba(214,91,0,0.15) 15.1%, rgba(233,245,0,0.15) 29.5%, rgba(23,255,17,0.15) 45.8%, rgba(29,255,255,0.15) 61.5%, rgba(5,17,255,0.15) 76.4%, rgba(202,0,253,0.15) 92.4% )">
         <br>
@@ -47,12 +48,16 @@
                 </div>
             </div>
             </div>
+            <div>
+            <div id = "response"></div>
+            </div>
             <br>
             <br>
             <div class= "mui-container mui--text-center" style= "margin-bottom:20px">
             <input type = "submit" value = "submit" class = "mui-btn mui-btn--primary"/>
         </form>
-        <button  class = "mui-btn mui-btn--primary">Get Game Suggestions</button>
+        <button class = "mui-btn mui-btn--primary" onclick = "quick_suggestion()"> Quick Suggestion </button>
+        <a  class = "mui-btn mui-btn--primary" href= "/rawdata">Game Suggestions Collection</a>
         </div>
         <br>
         <br>
