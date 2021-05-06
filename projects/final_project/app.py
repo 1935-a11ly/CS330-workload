@@ -42,6 +42,18 @@ def raw_data():
    #retrievedData = app.response_class(all_known_games.content, content_type='application/json')
    return render_template("suggestions.html", y = y)
 
+
+
+@app.route('/sellers')
+def sellers():
+    session = sql.connect('database.db')
+    session.row_factory = sql.Row
+    cur = session.cursor()
+    cur.execute("SELECT * FROM Playstation where cont_type == 'ask' UNION SELECT * FROM Xbox where cont_type == 'ask' UNION SELECT * FROM Pc where cont_type == 'ask'")
+    rows = cur.fetchall();
+    return render_template("sellers.html",rows = rows)
+    con.close()
+
 @app.route('/suggestions')
 def suggestions():
    return render_template('suggestions.html')
