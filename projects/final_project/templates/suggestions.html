@@ -12,10 +12,10 @@
             <th>Game Name</th>           
          </thead>
          
-         {% for row in data.0 %}
+         {% for row in data.Games %}
             <tr>
-               <td>{{row["row[0]"]}}</td>
-               <td>{{row["platform"]}}</td>
+               <td>{{row[0]}}</td>
+               <td>{{row.1 }}</td>
             </tr>
          {% endfor %}
       </table>
