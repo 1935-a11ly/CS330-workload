@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db')
 #print ("Opened database successfully");
 
 #conn.execute('CREATE TABLE Playstation (cont TEXT,platform TEXT, cont_type TEXT, gamename TEXT, date TEXT)')
@@ -46,7 +46,7 @@ def raw_data():
 
 @app.route('/sellers')
 def sellers():
-    session = sql.connect('database.db')
+    session = sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db')
     session.row_factory = sql.Row
     cur = session.cursor()
     cur.execute("SELECT * FROM Playstation where cont_type == 'ask' UNION SELECT * FROM Xbox where cont_type == 'ask' UNION SELECT * FROM Pc where cont_type == 'ask'")
@@ -69,7 +69,7 @@ def inventory_index():
 
 @app.route('/playstation')
 def playstation():
-   con = sql.connect('database.db')
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db')
    con.row_factory = sql.Row
    cur = con.cursor()
    cur.execute("select * from Playstation")
@@ -78,7 +78,7 @@ def playstation():
 
 @app.route('/xbox')
 def xbox():
-   con = sql.connect('database.db')
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db')
    con.row_factory = sql.Row
    cur = con.cursor()
    cur.execute("select * from Xbox")
@@ -87,7 +87,7 @@ def xbox():
 
 @app.route('/pc')
 def pc():
-   con = sql.connect('database.db')
+   con = sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db')
    con.row_factory = sql.Row
    cur = con.cursor()
    cur.execute("select * from Pc")
@@ -107,7 +107,7 @@ def data():
                 gname = request.form.get('game_name')
                 date = request.form.get('date')
 
-                with sql.connect('database.db') as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO Playstation (cont,platform,cont_type,gamename,date) VALUES (?,?,?,?,?)",(contr,platform, conttype, gname, date))
                     con.commit()
@@ -121,7 +121,7 @@ def data():
                 gname = request.form.get('game_name')
                 date = request.form.get('date')
 
-                with sql.connect('database.db') as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO Xbox (cont,platform,cont_type,gamename,date) VALUES (?,?,?,?,?)",(contr,platform, conttype, gname, date))
                     con.commit()
@@ -135,7 +135,7 @@ def data():
                 gname = request.form.get('game_name')
                 date = request.form.get('date')
 
-                with sql.connect('database.db') as con:
+                with sql.connect('/home/michaelmusa01/CS330-workload/projects/final_project/database.db') as con:
                     cur = con.cursor()
                     cur.execute("INSERT INTO Pc (cont,platform,cont_type,gamename,date) VALUES (?,?,?,?,?)",(contr,platform, conttype, gname, date))
                     con.commit()
