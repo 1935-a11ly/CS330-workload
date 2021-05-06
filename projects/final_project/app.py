@@ -5,7 +5,7 @@
 
 from flask import Flask, render_template, request
 import sqlite3 as sql
-
+import requests
 app = Flask(__name__)
 
 import sqlite3
@@ -30,6 +30,13 @@ def home():
 @app.route('/newgame')
 def new_game():
    return render_template('newgame.html')
+
+@app.route('/rawdata')
+def raw_data():
+   all_known_games= requests.get("https://mycallmusa01.pythonanywhere.com/api/games")
+   #print (all_known_games.json())
+   return (all_known_games.json())
+
 
 @app.route('/gameinventory')
 def game_inventory():
