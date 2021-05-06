@@ -34,6 +34,7 @@ def new_game():
 @app.route('/rawdata')
 def raw_data():
    all_known_games= requests.get("https://mycallmusa01.pythonanywhere.com/api/games")
+   #return (all_known_games.json())
    #print (all_known_games.json())
    #return app.response_class(all_known_games.content, content_type='application/json')
    retrievedData = app.response_class(all_known_games.content, content_type='application/json')
