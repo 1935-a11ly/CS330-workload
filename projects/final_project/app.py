@@ -33,13 +33,14 @@ def new_game():
 
 @app.route('/rawdata')
 def raw_data():
-   #all_known_games= requests.get("https://mycallmusa01.pythonanywhere.com/api/games")
-   x = {"topic":"Fire", "thunder":"blunder"}
+   all_known_games= requests.get("https://mycallmusa01.pythonanywhere.com/api/games")
+   y = all_known_games.json()
+   #x = {"topic":"Fire", "thunder":"blunder"}
    #return (all_known_games)
    #print (all_known_games.json())
    #return app.response_class(all_known_games.content, content_type='application/json')
    #retrievedData = app.response_class(all_known_games.content, content_type='application/json')
-   return render_template("suggestions.html", x = x)
+   return render_template("suggestions.html", y = y)
 
 @app.route('/suggestions')
 def suggestions():
