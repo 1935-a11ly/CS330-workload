@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+</head>
+   <body>
+   
+      <table  class = "mui-table mui-table--bordered">
+         <thead>
+            <th>Game ID</th>
+            <th>Game Name</th>           
+         </thead>
+         
+         {% for row in data.0 %}
+            <tr>
+               <td>{{row["row[0]"]}}</td>
+               <td>{{row["platform"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+   <a href = "/gameinventory" class = "mui-btn mui-btn--danger">Back to Community Inventory</a>
+   <a href = "/" class = "mui-btn mui-btn--primary">Back to Community Home</a>  
+   </body>
+</html>

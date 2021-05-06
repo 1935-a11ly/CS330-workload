@@ -9,8 +9,9 @@ import random
 
 app = Flask(__name__)
 
-all_game_names = ({
-    "0":"GT Sport", 
+all_game_names = {
+    "Games": [
+    {"0":"GT Sport", 
     "1":"Yakuza 6", 
     "2":"Street Fighter 5", 
     "3":"Infamous: Second Son", 
@@ -45,8 +46,8 @@ all_game_names = ({
     "32":"Guild Wars 2", 
     "33":"All the golden oldies", 
     "34":"A Monster's Expedition", 
-    "35":"Microsoft Flight Simulator",
-})
+    "35":"Microsoft Flight Simulator"}]
+}
 
 
 @app.route("/api/games", methods=['GET'])
