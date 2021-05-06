@@ -49,7 +49,7 @@ all_game_names = {
 
 }
 
-@app.route("/api/games")
+@app.route("/api/games", methods=['GET'])
 def all_games():
     return jsonify(all_game_names)
 
