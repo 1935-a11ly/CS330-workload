@@ -12,12 +12,12 @@
             <th>Game Name</th>           
          </thead>
          
-         {% if rows in data.Games %}
+         {% for rows in data.Games %}
             <tr>
-               <td>{{rows.0}}</td>
+               <td>{{rows.name}}</td>
                <td>{{rows.1 }}</td>
             </tr>
-         {% endif %}
+         {% endfor %}
       </table>
    <a href = "/gameinventory" class = "mui-btn mui-btn--danger">Back to Community Inventory</a>
    <a href = "/" class = "mui-btn mui-btn--primary">Back to Community Home</a>  
