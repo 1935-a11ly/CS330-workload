@@ -1,4 +1,4 @@
-# Internet Programming Projects
+# Internet Programming Projects (Full Stack Development)
 
 This is a repository based on Internet Programming principles in application development.
 
